@@ -54,8 +54,9 @@ Force pesante & $F_p$ & $mg$, $g$ accélération terrestre \\
 Force de rappel du ressort & $F_k$ & $-k\Delta x$, k elasticité du ressort\\
 Force normale & $N$ & déterminer par Newton \\
 Force de Tension & $T$ & déterminer par Newton \\
-Force centrifuge (fictive) & $-$ & $-m\vec\omega \times (\vec\omega \times \vec v)$ \\
+Force centrifuge (fictive) & $-$ & $-m\vec\omega \times (\vec\omega \times \vec R)$ \\
 Force de coriolis (fictive) & $-$ & $-2m\omega \times \vec{v'}$ \\
+Force liée à $\dot{\vec{\omega}}$ & $-$ & $\dot{\vec{\omega}} \times \vec R$ \\
 Force de gravitation & $F_{12}$ & $-G\frac{m_1 \cdot m_2}{d^2}\vec{u_{12}}$ \\
 \end{tabular}
 
@@ -68,6 +69,22 @@ Nom & Raccourci usuel & Expression \\
 Énergie potentielle du ressort & $E_k$ & $\frac{1}{2}kx^2$ \\
 Énergie cinétique & $E_{cin}$ & $\frac{1}{2}mv^2$ \\
 \end{tabular}
+
+La variation de l'énergie cinétique est égale à la somme des travaux de toutes les forces.
+
+\subsubsection{Solutions d'equations}
+
+\begin{tabular}{c|c|c}
+Mouvement & Equadiff & Solutions \\
+\hline
+Oscillateur harmonique & $ddot{x} + \omega^2x = 0$ & $Acos(\omega_0t) + Bsin(\omega_0t) = Csin(\omega_0t+D)$ \\
+Oscillateur amorti & $\ddot{x} + 2\gamma\dot{x}+\omega^2_0x = 0$ & - \\
+Oscillateur amorti forcé & $\ddot{x} + 2 \gamma \dot{x} + \omega^2_0 x = \alpha_0sin(\omega t)$ & - \\
+\end{tabular}
+
+Avec:
+
+$\omega_0 = \sqrt{\frac{k}{m}}$,$T = \frac{2\pi}{\omega_0}$,$\nu = \frac{1}{T}$,$\gamma = \frac{b}{2m}$,$A = x_0$,$B = \frac{v_0}{\omega_0}$, $C^2 = x^2_0 + (\frac{v_0}{\omega_0})^2$, $tg(D) = \omega_0 \frac{x_0}{v_0}$,$\alpha_0 = \frac{f}{m}$
 
 \pagebreak
 
@@ -190,5 +207,11 @@ $\vec{a_t} = \vec{\alpha} \times \vec{r}$,
 $I = \sum \limits_M d^2 dm$,
 $E_{cin} = \frac{1}{2}I\omega^2$
 
+\section{Systeme de points materiels}
 
+Equation du mouvement relatif :
+
+\begin{center}
+$\vec{F}_{2 \leftarrow 1} = \mu \ddot\vec{r}$ où $\mu = \frac{m_1 m_2}{m_1 + m_2}$ la masse réduite.
+\end{center}
 \end{document}
