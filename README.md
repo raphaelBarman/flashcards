@@ -18,4 +18,3 @@ Si vous trouvez une erreur dans les flashcards, n'hésitez pas à ouvrir une "Is
 ### Écrire des flashcards.
 
 Si vous voulez contribuer, vous pouvez écrire des flashcards en reprenant le fichier template.tex, le compléter, puis me l'envoyer.
-
