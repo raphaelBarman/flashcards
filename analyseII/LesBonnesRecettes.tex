@@ -1,0 +1,557 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Hirt Grégoire et Raphaël Barman}
+\title{Les bonnes recettes du Père Wittwer}
+\setlength{\parindent}{0pt}
+\begin{document}
+
+\maketitle
+
+\chapter{Equation différentielles}
+\section{Séparation des variables}
+
+Une ED est soluble par séparation des variables si elle peut se réécrire sous la forme :
+
+$$ f(y)dy = f(x)dx $$
+
+Cette forme s'obtient en substituant $y'$ par $\frac{dy}{dx}$ et en effectuant les transformation nécessaires.
+
+Il suffit ensuite d'intégrer de chaque côté et d'isoler $y$. Ne pas oublier de gérer la constante d'intégration.
+
+\section{Courbes orthogonales}
+
+Donné une familles de courbes. La méthode pour trouver la famille de courbes orthogonale à celle-ci est la suivante.
+
+\begin{itemize}
+\item Effectuer une "dérivée implicite" par rapport à \emph{x} pour trouver l'équation différentielle de la famille de départ.
+\item Éliminer la constante si nécessaire.
+\item Inverser et opposer sa pente en prenant $y' = -\frac{1}{y'}$.
+\item Résoudre la nouvelle équation différentielle
+\end{itemize}
+
+Exemple :
+
+$y = \frac{c}{x}$
+
+Dérivation implicite:
+
+$$xy = c$$
+$$xy' + y = 0$$
+
+Substitution $y' = -\frac{1}{y'}$ :
+
+$$-\frac{x}{y'} + y = 0 \Rightarrow yy' - x = 0$$
+
+Intégration :
+
+$$ydy = xdx \Rightarrow \frac{1}{2}y^2 = \frac{1}{2}x^2 + C$$
+
+Réduction :
+
+$$y^2 - x^2 = C$$
+
+\subsection{Élimination de la constante}
+
+Pour éliminer la constante après dérivation implicite. Il suffit de remplacer la constante par son expression dans l'équation originale.
+
+Ex:
+
+$$y^3 = cx^2 \Rightarrow 3y^2y' = 2cx$$
+$$c = \frac{y^3}{x^2}$$
+$$3y^2y' = 2\frac{y^3}{x^2}x = 2\frac{y^3}{x}$$
+$$3xy' = 2y$$
+
+\section{ED Linéaires du premier ordre}
+
+Les ED linéaire du premier ordre sont de la forme :
+
+$$y' + p(x)y = q(x)$$
+
+Les solutions sont de la forme :
+
+$$y(x) = y_{hom}(x) + y_{part}(x)$$
+
+\subsection{Solution clé en main}
+
+
+Solution générale de l'homogène trouvée par séparation des variables : $y_{hom} = e^{-P(x)}$
+
+Solution générale de la particulière trouvée par variation de la constante : $y_{part} = \left( \int e^{P(x)} q(x) dx \right) e^{-P(x)}$
+
+$$y(x) = e^{-P(x)} + \left( \int e^{P(x)} q(x) dx \right) e^{-P(x)}$$
+
+\subsection{Variation de la constante}
+
+Après avoir trouvé la solution homogène par séparation des variables. On pose :
+
+$$ y_p(x) = C(x) y_h$$
+
+On remplace dans l'équation :
+
+$$y_p' + p(x)y_p = q(x)$$
+
+Ce qui donne :
+
+$$C'(x)y_h + C(x)y_h' + p(x)C(x)y_h = q(x) =C'(x)y_h + C(x)(y_h' + p(x)y_h) = C'(x)y_h = q(x)$$
+
+$y_h' + p(x)y_h = 0$ puisque c'est la définition de l'homogène.
+
+$$C(x) = \int e^{P(x)} q(x) dx$$
+
+\subsection{Méthode des coefficient indéterminés}
+
+Ne marche pas toujours,mais permet de deviner $y_p$ dans des cas simples. NECESSITE $p(x) = const$ \\
+
+Prendre comme candidat à une solution particulière $y_{part} = Aq(x) + Bq'(x)$. Si q(x) est solution de l'équation (ie. il est compris dans la solution homogène trouvée précédemment) il faut prendre $y_{part} = Axq(x)+ Bxq'(x)$
+
+Substituer le candidat $y_{part}$ dans l'équation de base. Et résoudre les coefficients A et B.
+
+\section{ED linéaires du second ordre (coef. constants)}
+
+L'équation est de la forme :
+
+$$ay'' + by' + cy = q(x)$$
+
+\subsection{Trouver la solution homogène}
+
+On pose :
+
+$$ay'' + by' + cy = 0$$
+
+La solution est de la forme : 
+$$y_h(x) = C_1y_1(x) + C_2y_2(x)$$
+
+Avec $y_{1,2}(x) = e^{\lambda x}$.
+
+Pour trouver lambda on pose l'équation caractéristique :
+
+$$a\lambda^2 + b\lambda + c = 0$$
+
+En fonction du $\Delta = b^2 - 4ac$ trouvé :
+
+\subsubsection{Deux solutions réelles ($\Delta > 0$)}
+
+
+Solution homogène :
+
+$$y_h(x) = C_1e^{\lambda_1x} + C_2e^{\lambda_2x}$$
+
+Avec $\lambda_{1,2} = \frac{-b \pm \sqrt{\Delta}}{2a}$
+
+\subsubsection{Une double solution ($\Delta = 0$)}
+
+Solution homogène :
+
+$$y_h(x) = C_1e^{\lambda x} + C_2xe^{\lambda x}$$
+
+Avec $\lambda = \frac{-b}{2a}$
+
+\subsubsection{Deux solutions complexes ($\Delta < 0$)}
+
+Solution homogène :
+
+$$y_h(x) = C_1e^{\alpha x} sin(\beta x) + C_2e^{\alpha x} cos(\beta x) = \left( C_1 sin(\beta x) + C_2 cos(\beta x) \right) e^{\alpha x} $$
+
+Avec $\alpha , \beta$ les composantes des solution complexes conjuguées $\alpha + i\beta , \alpha - i\beta$. Les solution sont de la forme : $\lambda_{1,2} = \frac{-b \pm i\sqrt{-\Delta}}{2a}$
+
+\subsection{Recherche de la solution particulière}
+
+\subsubsection{Variation des constantes}
+
+Les dérivées $C_1'(x),C_2'(x)$ satisfont le système linéaire :
+
+\begin{align*}
+C_1'(x)y_1(x) + C_2'(x)y_2(x) &= 0 \\
+C_1'(x)y_1'(x) + C_2'(x)y_2'(x) &= \frac{1}{a} q(x)
+\end{align*}
+
+$$
+\begin{pmatrix}
+C_1'(x) \\
+C_2'(x)
+\end{pmatrix}
+ =
+\begin{pmatrix}
+y_1(x) & y_2(x) \\
+y_1'(x) & y_2'(x) 
+\end{pmatrix}^{-1}
+\begin{pmatrix}
+0 \\
+\frac{1}{a} q(x)
+\end{pmatrix}
+$$
+
+On trouve l'expression de chaque $C'(x)$ puis on intègre.\\
+
+\underline{Remarque :} La fonction $u(x)=\det\begin{pmatrix}
+y_1(x) & y_2(x) \\
+y_1'(x) & y_2'(x) 
+\end{pmatrix}=y_1(x)\cdot y_2'(x)-y_1'(x)\cdot y_2(x)$ est appelée le Wronskien des solutions $y_1$ et $y_2$. Il est non nul (pour tout x) si les solutions $y_1$ et $y_2$ sont linéairement indépendantes.
+
+\subsubsection{Coefficients indéfinis}
+
+On peut distinguer trois cas :
+\begin{enumerate}
+\item Si $q(x)$ n'est pas solution de l'équation homogène, on pose $$y_p = Aq + Bq'+Cq''+\hdots + Nq^{(n)}$$
+\item Si $q(x)$ est solution, mais que $x\cdot q(x)$ ne l'est pas, on pose $$y_p = A(xq) + B(xq)'+C(xq)''+\hdots + N(xq)^{(n)}$$
+\item Si $q(x)$ et $x\cdot q(x)$ sont solution, on pose $$y_p = A(xq) + B(x^2q)'+C(x^2q)''+\hdots + N(x^2q)^{(n)}$$
+\end{enumerate}
+
+Exemples : \\
+\begin{itemize}
+\item si $q(x) = 3sin(2x) + 5x$\\
+$\Rightarrow  y_p = Asin(2x) + Bcos(2x) + Cx + D$
+\item si $q(x) = 2xe^{-5x}$\\
+$\Rightarrow y_p = Axe^{-5x} + Be^{-5x}$
+\item si $q(x) = 2sin^2(x)+3e^{2x}$ \\
+$\Rightarrow y_p = Asin^2 + Bsin(x)cos(x) + Ccos^2(x) + De^{2x}$
+\end{itemize}
+
+\section{Equations Homogènes}
+
+Les équations homogènes sont de la forme :
+
+$$y' = f(\frac{y}{x})$$
+
+Pour la résoudre on pose $y(x) = xv(x)$ ce qui nous donne :
+
+$$v + xv' = f(v)$$
+
+Que l'on peut résoudre par séparation des variables.\\
+\subsection{Equation homogènes du deuxième ordre sans coefficient constants}
+Les équations homogène de la forme :
+$$y''+p(x)y'+q(x)y=0$$
+avec p,q des fonction continues sur un intervalle $I$, peuvent être résolues, si l'on connaît une solution non nulle $y_1$, en posant
+$$y(x) = U(x)\cdot y_1(x)$$
+avec $U$ une primitive d'une nouvelle fonction inconnue $u$.\\
+On obtient :
+\begin{align*}
+&U''(x) \cdot y_1(x)+ 2\cdot U'(x)\cdot y_1'(x)+U(x)\cdot y_1''(x)\\
++&p\cdot U'(x)\cdot y_1(x) + p(x) \cdot U(x) \cdot y_1'(x)+q(x)\cdot U(x) \cdot y_1(x) = 0
+\end{align*}
+En utilisant le fait que $y_1(x)$ est une solution et en notant $U'(x)=u(x)$, on obtient :
+\begin{align*}
+y_1(x) \cdot u'(x) + (2\cdot y_1'(x) + p(x)\cdot y_1(x))\cdot u(x) &= 0
+\end{align*}
+Qui est une équation homogène que l'on sait résoudre.
+
+%\section{Equation de Bernoulli}
+%
+%Sont de la forme :
+%\begin{align*}
+%y' + p(x)y = q(x)y^m &&, m \in \lbrace 2,3,4,... \rbrace
+%\end{align*}
+%
+%Poser :
+%
+%$$u(x) = y(x)^{1-m}$$
+%$$u' = (1-m)y^{-m}y'$$
+%
+%En substituant on obtient :
+%
+%$$u'(x) + (1-m)p(x)u(x) = (1-m)q(x)$$
+%
+%Que l'on résout comme une ED linéaire du premier ordre en u.
+%
+%Ensuite pour retrouver $y(x)$ il faut distinguer deux cas:
+%
+%
+%\subsubsection{m est impair}
+%Restreindre la solution à des intervalles ou $u(x) > 0$ dans lesquels la solution est
+%$$y(x) = u(x)^{\frac{1}{1-m}}$$
+%\subsubsection{m est pair}
+%
+%Découper en intervalles :
+%\begin{itemize}
+%\item Si $u(x) > 0 \Rightarrow y(x) = u(x)^{\frac{1}{1-m}}$
+%\item Si $u(x) < 0 \Rightarrow y(x) = -(-u(x))^{\frac{1}{1-m}}$
+%\end{itemize}
+
+\section{Equation de Ricatti}
+
+C'est une équation de la forme :
+$$y'=a(x)\cdot y^2 + b(x) \cdot y+c(x)$$
+avec $a,b,c$ des fonctions continues sur un intervalle $I$.
+On ne peut pas la résoudre en général, sauf si l'on connaît déjà une solution.\\
+Donné une solution $y_1(x)$, on pose :
+$$y(x)=y_1(x)+\frac{1}{u(x)}$$
+avec $u(x)$ inconnu, on substitue dans l'équation de départ :
+$$y_1'-\frac{1}{u^2}u'=a\cdot y_1^2 + 2\cdot a \cdot y_1 \cdot \frac{1}{u} + a \cdot \frac{1}{u^2} + b\cdot y_1 + b\cdot \frac{1}{u} + c$$
+Vu que $y_1'$ est une solution, l'équation se simplifie :
+\begin{align*}
+&-\frac{1}{u^2}u'=2\cdot a \cdot y_1 \cdot \frac{1}{u} + a \cdot \frac{1}{u^2} + b\cdot \frac{1}{u} \tag*{On multiplie par $u^2$}\\
+\Leftrightarrow\ \ &u'+2\cdot a \cdot y_1 \cdot u + a + b \cdot u = 0\\
+\Leftrightarrow\ \ &u'+(2\cdot a \cdot y_1 + b)\cdot u = -a
+\end{align*}
+Qui est une équation linéaire que l'on sait résoudre.
+%Equations de la forme :
+%
+%$$y_r' = a(x)y_r^2 + b(x)y_r + c(x)$$
+%
+%
+%Si $c(x) = 0$ c'est une équation de Bernoulli. On ne peut pas les résoudre à moins de connaître une solution particulière $y_1(x)$. On pose $y_r(x) = y_1(x) + y(x)$ et on substitue.
+%
+%$$y' + (-2a(x)y_1(x)-b(x))y = a(x)y^2$$
+%
+%Ce qui est une équation de Bernoulli avec :
+%\begin{align*}
+%p(x) &= -2a(x)y_1(x)-b(x) \\
+%q(x) &= a(x) \\
+%m &= 2
+%\end{align*}
+
+\chapter{Fonctions de deux variables}
+
+\section{Dérivées partielles}
+
+La dérivée partielle en fonction d'une variable se note $\frac{\delta f}{\delta x}(x_1,x_2,x_3,...,x_i,...,x_n)$ et est obtenue en dérivant par rapport à $x_i$ en considérant que les $n-1$ autres variables sont des constantes.\\
+
+La définiton explicite pour le cas des deux variables est définie comme suit :
+\begin{align*}
+\frac{\delta f}{\delta x}(x_0,y_0) = \lim\limits_{h\rightarrow 0} \frac{f(x_0+h,y_0)-f(x_0,y_0)}{h}\\
+\frac{\delta f}{\delta y}(x_0,y_0) = \lim\limits_{h\rightarrow 0} \frac{f(x_0,y_0+h)-f(x_0,y_0)}{h}\\
+\end{align*}
+
+Exemples :
+	$$\frac{\delta}{\delta x} \frac{x}{y} + \frac{y}{x} = \frac{1}{y} + \frac{y}{x^2}$$
+	$$\frac{\delta}{\delta y} \frac{x}{y} + \frac{y}{x} = \frac{1}{x} + \frac{x}{y^2}$$
+	$$f(x,y) = sin(x^2y)cosh(y-x)$$
+	$$\frac{\delta f}{\delta x}f(x,y) = 2xycos(x^2y)cosh(y-x) - sin(x^2y)sinh(y-x)$$
+	$$\frac{\delta f}{\delta y}f(x,y) = x^2cos(x^2y)cosh(y-x) + sin(x^2y)sinh(y-x)$$
+
+\section{Limites et continuité}
+
+Lors du test d'une limite sur une fonction de deux variables, il faut que la limite soit égale quelle que soit la direction avec laquelle on arrive au point voulu. Pour prouver qu'une limite n'existe pas il suffit donc de trouver deux directions qui ne convergent pas pareil. \\
+
+En revanche, pour prouver qu'une limite existe on peut utiliser les coordonnées polaires :
+
+\begin{align*}
+x &= rcos(\phi) \\
+y &= rsin(\phi)
+\end{align*}
+
+Et poser cette limite :
+
+$$\lim_{r \to 0} f(r,\phi)$$
+
+Il faut ensuite montrer que la valeur de la limite ne dépend que de $r$, $\phi$ indiquant la direction et celle-ci ne devant avoir aucune influence sur la limite.
+
+Concernant la continuité il faut comme pour les fonctions d'une variable que la limite soit égale à la valeur de la fonction au point à tester.
+
+\section{Plan Tangent}
+
+La formule d'un plan tangent à une surface en $(x_0,y_0)$:
+
+$$ z = f(x_0,y_0) + \frac{\delta f}{\delta x}f(x_0,y_0)(x-x_0) + \frac{\delta f}{\delta y}f(x_0,y_0)(y-y_0) $$
+
+Les dérivées partielles représentant la pente en un point dans les direction respectives de dérivation. \\
+
+A noter que l'existence d'un plan tangent en un point suppose que la fonction est différentiable en ce point.
+
+\subsection*{Equation du plan tangent}
+
+Si on a une surface définie par une équation du type $F(x,y,z) = 0$ on peut définir l'équation du plan tangent comme :
+
+$$\nabla F(x_0,y_0,z_0) \cdot (x-x_0,y-y_0,z-z_0) = 0$$
+
+Ou $\cdot$ est le produit scalaire. Cela correspond à prendre tout vecteur orthogonal à la normale en ce point de la surface. Cela défini bien un plan.
+
+\section{Opérateurs}
+
+\subsection{Gradient}
+
+Le gradient de $f$ est défini comme :
+
+$$\nabla f(x,y) = (\frac{\delta f}{\delta x} , \frac{\delta f}{\delta y}) = \frac{\delta f}{\delta x}\vec{e}_x + \frac{\delta f}{\delta y}\vec{e}_y$$
+
+Le gradient est perpendiculaire/normal aux courbes de niveau et aux surfaces définies par les équations du style $f(x,y) = 0$.
+
+\subsubsection{Règles de calcul}
+
+$$\nabla(g \cdot h) = g \cdot \nabla h + \nabla g \cdot h$$
+
+$$\nabla(g + h) = \nabla g + \nabla h$$
+
+$$\nabla \left( \frac{g}{h} \right) = \frac{1}{h}\nabla g + \frac{g}{h^2} \nabla h$$ 
+
+\subsection{Laplacien}
+
+Le laplacien de $f$ est défini comme :
+
+$$\Delta f(x,y) = \frac{\delta^2f}{\delta x^2} + \frac{\delta^2f}{\delta y^2} = \nabla^2 f(x,y)$$
+
+\section{Fonction implicites}
+
+Une équation $F(x_0,y_0) = 0$ avec $\frac{\delta F}{\delta y} \neq 0$ défini une fonction $y=f(x)$ implicite au voisinage de $(x_0,y_0)$. Et on a :
+
+$$F(x, f(x)) = 0 \Rightarrow f(x_0) = y_0$$
+
+Et aussi/surtout :
+
+$$f'(x) = - \frac{\delta_xF (x,f(x))}{\delta_yF(x,f(x))}$$
+
+\section{Dérivée directionnelle}
+
+La dérivée directionnelle en $(0,0)$, dans la direction du vecteur $\mathbf{e}$ s'obtient soit en appliquant la définition de la dérivée. 
+
+$$\delta_e f(x,y) = \lim_{t \to 0} \frac{f(t\mathbf{e}_x, t\mathbf{e}_y) - f(0,0)}{t}$$
+
+Ou en utilisant que
+
+$$\delta_e f(p_0) = \nabla f(p_0) \cdot \mathbf{e}$$ 
+
+\section{Matrice jacobienne}
+
+La matrice jacobienne est la matrice des dérivées partielles d'un changement de coordonnée de dimension n. Donc une matrice $n\times n$. Pour un changement de coordonées 2D :
+
+$$F(u,v) = (F_1(u,v),F_2(u,v))$$
+
+\begin{align*}
+x &= F_1(u,v) \\
+y &= F_2(u,v) 
+\end{align*}
+
+Elle s'écrit
+
+$$
+\begin{pmatrix}
+\frac{\delta F_1}{\delta u}(u,v) & \frac{\delta F_1}{\delta v}(u,v) \\
+\frac{\delta F_2}{\delta u}(u,v) & \frac{\delta F_2}{\delta v}(u,v)
+\end{pmatrix}
+$$
+\section{Matrice Hessienne}
+
+La matrice Hessienne de $f : R^n \to R$ est la matrice des dérivées partielles secondes de $f$.
+
+$$H_{ij}(f) = \frac{\delta^2f}{\delta x_i\delta x_j}$$
+
+Pour une matrice d'une fonction $R^2 \to R$ :
+
+$$
+\begin{pmatrix}
+  \dfrac{\partial^2 f}{\partial x^2} & \dfrac{\partial^2 f}{\partial x\,\partial y}\\
+  \dfrac{\partial^2 f}{\partial y\,\partial x} & \dfrac{\partial^2 f}{\partial y^2} \\[2.2ex]
+\end{pmatrix}
+$$
+
+Pour une matrice d'une fonction $R^3 \to R$ :
+
+$$
+\begin{pmatrix}
+  \dfrac{\partial^2 f}{\partial x^2} & \dfrac{\partial^2 f}{\partial x\,\partial y} & \dfrac{\partial^2 f}{\partial x\,\partial z} \\[2.2ex]
+  \dfrac{\partial^2 f}{\partial y\,\partial x} & \dfrac{\partial^2 f}{\partial y^2} & \dfrac{\partial^2 f}{\partial y\,\partial z} \\[2.2ex]
+  \dfrac{\partial^2 f}{\partial z\,\partial x} & \dfrac{\partial^2 f}{\partial z\,\partial y} & \dfrac{\partial^2 f}{\partial z^2}
+\end{pmatrix}
+$$
+
+
+Elle sert essentiellement à faire une étude qualitative des point-critiques de la fonction $f$.
+
+\section{Dérivée d'intégrales}
+
+$$F(t) = \int_{a(t)}^{b(t)} f(x,t)dx $$
+
+$$\frac{d}{dt} F(t) = -f(a(t),t)a'(t) + f(b(t),t)b'(t) + \int_{a(t)}^{b(t)} \delta _t f(x,t) dx$$
+
+Dans les cas particulier ou $a(t)$ et/ou $b(t)$ sont constant les termes avec leur dérivées sautent. Particulièrement si $a(t) = a, b(t) = b$ :
+
+$$\frac{d}{dt} F(t) = \int_a^b \delta_t f(x,t)dx$$
+
+\section{Extremums locaux et absolus d'une fonction de n variables}
+
+\subsection{Extremums locaux}
+Les points critiques d'une fonction $f : R^n \to R$ sont les point ou $\nabla f = \vec{0}$.
+
+Ensuite une analyse qualitative des point critiques est réalisée à partir de la Hessienne de $f$. \\
+
+\subsection{Pour n=2 :}
+
+On a :
+
+\begin{align*}
+\Lambda_1 &= \delta x^2 f(x,y)  = H_{11}(f)\\
+\Lambda_2 &= det(H_f(x_0,y_0)) 
+\end{align*}
+
+\begin{center}
+\begin{tabular}{c|c|c}
+$\Lambda_2$ & $\Lambda_1$ & Conclusion \\ 
+\hline
+> 0 & > 0 & minimum local \\ 
+> 0 & < 0 & maximum local \\ 
+< 0 &  & point-selle \\ 
+= 0 &  & ? \\ 
+\end{tabular} 
+\end{center}
+
+\subsection{Pour n=3 :}
+
+On a :
+
+\begin{align*}
+\Lambda_1 &= \dfrac{\partial^2 f}{\partial x^2} f(x_0,y_0,z_0)  = H_{11}(f)\\
+\Lambda_2 &= \det\begin{pmatrix}
+  \dfrac{\partial^2 f}{\partial x^2} & \dfrac{\partial^2 f}{\partial x\,\partial y}\\
+  \dfrac{\partial^2 f}{\partial y\,\partial x} & \dfrac{\partial^2 f}{\partial y^2} \\[2.2ex]
+\end{pmatrix} = \dfrac{\partial^2 f}{\partial x^2} \cdot \dfrac{\partial^2 f}{\partial y^2} - \dfrac{\partial^2 f}{\partial x\,\partial y} \cdot \dfrac{\partial^2 f}{\partial y\,\partial x}\\
+\Lambda_3 &= \det(H_f(x_0,y_0,z_0)) 
+\end{align*}
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+$\Lambda_3$ & $\Lambda_2$ & $\Lambda_1$ & Conclusion \\ 
+\hline
+> 0& > 0 & > 0 & minimum local \\ 
+< 0 & > 0 & < 0 & maximum local \\ 
+$\neq 0$ & ? & ? & point-selle \\ 
+\end{tabular} 
+\end{center}
+
+\subsection{Extremums absolus}
+
+
+Ils peuvent se trouver :
+
+\begin{itemize}
+\item Sur un extremum local
+\item Sur un point ou f n'est pas différentiable
+\item Sur le bord du domaine 
+\end{itemize}
+
+\section{Extremums avec contrainte (Lagrange)}
+
+Si $f(x,y)$ est une fonction à maximiser sous la contrainte $g(x,y) = 0$ on peut définir la fonction de Lagrange :
+
+$$F(x,y,\lambda) = f(x,y) - \lambda g(x,y)$$
+Ou :
+$$F(x,y,\lambda, \mu) = f(x,y) - \lambda g(x,y) - \mu h(x,y)$$
+
+Si il y a plusieurs contraintes.
+
+On pose ensuite $\nabla F(x,y,\lambda, (\mu)) = \vec{0}$: Et on résout.
+
+\chapter{Intégrales multiples}
+
+\section{B-A-Ba}
+
+Intégrale sous la forme :
+
+$$\int_a^b \int_{g(y)}^{h(y)} f(x,y) dx dy$$
+
+Intégrer depuis le centre en évaluant en substituant les bornes.
+
+\section{Changement de variables}
+
+Si on a une fonction $f : D \to R$ et une fonction de changement de coordonnées $G : \bar{D} \to D$. L'intégrale dans les nouvelles coordonnées s'écrit :
+
+$$\iint_D f(x,y)dxdy = \iint_{\bar{D}} f(G_1(u,v),G_2(u,v)) |det(J_G(u,v)| dudv$$
+
+
+
+\end{document}
