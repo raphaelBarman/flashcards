@@ -1,0 +1,539 @@
+% -*- coding-system:utf-8 
+% LATEX PREAMBLE --- needs to be imported manually
+\documentclass[12pt]{article}
+\special{papersize=3in,5in}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath}
+\pagestyle{empty}
+\setlength{\parindent}{0in}
+
+%%% commands that do not need to imported into Anki:
+\usepackage{mdframed}
+\newcommand*{\xfield}[1]{\begin{mdframed}\centering #1\end{mdframed}\bigskip}
+\newenvironment{note}{}{}
+\newcommand*{\tags}[1]{\paragraph{tags: }#1} 
+% END OF THE PREAMBLE
+\begin{document}
+\begin{note}
+	\tags{trigo}
+	\xfield{Calculer $sin(\frac{\pi}{4})$ et $cos(\frac{\pi}{4})$}
+	\xfield{On peut calculer fac/ilement ces valeurs en prenant un triangle isocèle de côtés isocèles 1, il aura deux angles de $\frac{\pi}{4}$, un angle droit et une hypothénuse de $\sqrt{2}$ alors : \\
+	$\sin(\frac{\pi}{4}) = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}$\\
+	$\cos(\frac{\pi}{4}) = \frac{\sqrt{2}}{2}$}
+\end{note}
+\begin{note}
+	\tags{trigo}
+	\xfield{Calculer
+$sin(\frac{\pi}{6})$,  $cos(\frac{\pi}{6})$ , $sin(\frac{\pi}{3})$ et $cos(\frac{\pi}{3})$}
+	\xfield{On peut calculer facilement ces valeurs en prenant un triangle équilatéral de côté 1, il aura alors des angles de $\frac{\pi}{3}$ et si l'on coupe le triangle en deux, cela formera un triangle rectangle avec un angle de $\frac{\pi}{6}$ qui aura :
+	\begin{itemize}
+	\item une hypothénuse de 1
+	\item  un côté adjacent à $\frac{\pi}{3}$ et opposé à $\frac{\pi}{6}$ de $\frac{1}{2}$
+	\item un côté opposé à $\frac{\pi}{3}$ et adjacent à $\frac{\pi}{6}$ de $\sqrt{(1^2-(\frac{1}{2})^2} = \frac{\sqrt{3}}{2}$
+	\end{itemize}
+	On a donc :\\
+	$sin(\frac{\pi}{6}) = \frac{1}{2}$, $cos(\frac{\pi}{6}) = \frac{\sqrt{3}}{2}$ \\
+	$sin(\frac{\pi}{3}) = \frac{\sqrt{3}}{2}$, $cos(\frac{\pi}{3}) = \frac{1}{2}$}
+\end{note}
+\begin{note}
+	\tags{complexes}
+	\xfield{Comment exprimer $z=a-ib$ en forme polaire.
+	\\exprimer $1-\sqrt{3}i$ en forme polaire}
+	\xfield{La forme polaire de $z$ s'écrit comme $z= \vert z \vert e^{i \varphi}$ \\
+	où $\vert z \vert = \sqrt{a^2+b^2}$\\
+	et $\varphi = 2 \cdot \arctan(\frac{b}{a+\vert z \vert})$ si $y \neq 0$ ou si $x > 0$ et $y = 0$, sinon $\varphi = \pi$\\
+	Pour $z = 1-\sqrt{3}i$\\
+	$\vert z \vert = \sqrt{1^2+\sqrt{3}^2} = 2$\\
+	et $\varphi =  2 \cdot \arctan(\frac{\sqrt{3}}{1+2}) = 2 \cdot = \arctan(\frac{1}{\sqrt{3}})=2 \cdot \frac{\pi}{6} = \frac{\pi}{3}$\\
+	donc $z= 2 e^{i \frac{\pi}{3}}$}
+\end{note}
+\begin{note}
+	\tags{polynomes}
+    \xfield{Comment savoir si le polynome $P(x)$ est divisible par $x - a$ ? }
+    \xfield{$P(x)$ est divisible par $x-a$ si $P(a) = 0$}
+\end{note}
+\begin{note}
+	\tags{identites}
+    \xfield{$(a+b)^3\ =\ ?$}
+    \xfield{$(a+b)^3\ =\ a^3 + 3a^2b+3ab^2+b^3$}
+\end{note}
+
+\begin{note}
+	\tags{identites}
+    \xfield{$(a-b)^3\ =\ ?$}
+    \xfield{$(a-b)^3\ =\ a^3 - 3a^2b+3ab^2-b^3$}
+\end{note}
+
+\begin{note}
+	\tags{identites}
+    \xfield{$a^3-b^3\ =\ ?$}
+    \xfield{$a^3-b^3\ =\ (a-b)(a^2+ab+b^2)$}
+\end{note}
+
+\begin{note}
+	\tags{identites}
+    \xfield{$a^3+b^3\ =\ ?$}
+    \xfield{$a^3+b^3\ =\ (a+b)(a^2-ab+b^2)$}
+\end{note}
+
+\begin{note}
+	\tags{identites}
+    \xfield{$(a+b+c)^2\ =\ ?$}
+    \xfield{$(a+b+c)^2\ =\ a^2+b^2+c^2+2ab+2bc+2ac$}
+\end{note}
+
+\begin{note}
+	\tags{identites logarithmes}
+    \xfield{$\log_a(xy)\ =\ ?$}
+    \xfield{$\log_a(xy)\ =\ \log_a(x)+\log_a(y)$}
+\end{note}
+
+\begin{note}
+	\tags{identites logarithmes}
+    \xfield{$\log_a(\frac{x}{y})\ =\ ?$}
+    \xfield{$\log_a(\frac{x}{y})\ =\ \log_a(x)-\log_a(y)$}
+\end{note}
+
+\begin{note}
+	\tags{identites logarithmes}
+    \xfield{$\log_a(\frac{1}{y})\ =\ ?$}
+    \xfield{$\log_a(\frac{1}{y})\ =\ -\log_a(y)$}
+\end{note}
+
+\begin{note}
+	\tags{identites logarithmse}
+    \xfield{$\log_a(x^p)\ =\ ?$}
+    \xfield{$\log_a(x^p)\ =\ p \log_a(x)$}
+\end{note}
+
+\begin{note}
+	\tags{identites absolues}
+    \xfield{$|a+b|$ ? (inegalite du triangle)}
+    \xfield{$ |a+b| \leqslant |a| + |b|\ $}
+\end{note}
+
+\begin{note}
+	\tags{identites absolues}
+    \xfield{$|a-b|$ ? (inegalite du triangle)}
+    \xfield{$|a - b| \geqslant ||a|-|b||$}
+\end{note}
+
+\begin{note}
+	\tags{identites sommes}
+    \xfield{$\sum_{i=0}^n i\ =\ ? $}
+    \xfield{$\sum_{i=0}^n i\ = \sum_{i=1}^n i\ =\ \frac{n(n+1)}{2}$}
+\end{note}
+
+\begin{note}
+	\tags{identites sommes}
+    \xfield{$\sum_{i=0}^n i^2 = ?$}
+    \xfield{$\sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6}$}
+\end{note}
+
+\begin{note}
+	\tags{identites sommes}
+    \xfield{
+        $\sum_{i=0}^n a^i = ? $\\        
+        $\sum_{i=0}^{n-1} a^i = ? $
+    }
+    \xfield{$\sum_{i=0}^n a^i = \frac{a^{n+1}-1}{a-1}$\\$\sum_{i=0}^{n-1} a^i = \frac{1-a^{n}}{1-a}$}
+\end{note}
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\cos^2(\alpha) + \sin^2(\alpha) = ?$}
+    \xfield{$\cos^2(\alpha) + \sin^2(\alpha) = 1$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\sin(\alpha \pm \beta) =$ ?}
+    \xfield{$\sin(\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\cos(\alpha \pm \beta) =$ ?}
+    \xfield{$\cos(\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta$ (Attention, au $\mp$ dans la dernière égalité )}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\sin 2\theta =$ ?}
+    \xfield{$\sin 2\theta = 2 \sin \theta \cos \theta $}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\cos 2\theta =$ ?}
+    \xfield{$\cos 2\theta = \cos^2 \theta - \sin^2 \theta \ = 2 \cos^2 \theta - 1\ = 1 - 2 \sin^2 \theta$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\cos \theta \cos \varphi =$ ?}
+    \xfield{$\cos \theta \cos \varphi = \frac{\cos(\theta - \varphi) + \cos(\theta + \varphi)} {2}$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\sin \theta \sin \varphi =$ ?}
+    \xfield{$\sin \theta \sin \varphi = \frac{\cos(\theta - \varphi) - \cos(\theta + \varphi)} {2}$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\sin \theta \cos \varphi =$ ?}
+    \xfield{$\sin \theta \cos \varphi = \frac{\sin(\theta + \varphi) + \sin(\theta - \varphi)} {2}$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\cos \theta \sin \varphi =$ ?}
+    \xfield{$\cos \theta \sin \varphi = \frac{\sin(\theta + \varphi) - \sin(\theta - \varphi)} {2}$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\sin \theta \pm \sin \varphi =$ ?}
+    \xfield{$\sin \theta \pm \sin \varphi = 2 \sin\left( \frac{\theta \pm \varphi}{2} \right) \cos\left( \frac{\theta \mp \varphi}{2} \right)$ (notice the $\mp$ !)}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\cos \theta + \cos \varphi =$ ?}
+    \xfield{$\cos \theta + \cos \varphi = 2 \cos\left( \frac{\theta + \varphi} {2} \right) \cos\left( \frac{\theta - \varphi}{2} \right)$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\cos \theta - \cos \varphi =$ ?}
+    \xfield{$\cos \theta - \cos \varphi = -2\sin\left( \frac{\theta + \varphi} {2}\right) \sin\left(\frac {\theta - \varphi}{2}\right)$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\sinh x =$ ?}
+    \xfield{$\sinh x = \frac {e^x - e^{-x}} {2}$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\cosh x = $ ?}
+    \xfield{$\cosh x = \frac {e^x + e^{-x}} {2}$}
+\end{note}
+
+\begin{note}
+	\tags{identites trigo}
+    \xfield{$\tanh x =$ ?}
+    \xfield{$\tanh x = \frac{\sinh x}{\cosh x} = \frac {e^x - e^{-x}} {e^x + e^{-x}}$}
+\end{note}
+
+\begin{note}
+\begin{note}
+	\tags{limites,identites}
+	\xfield{$\lim\limits_{x \to \infty}\frac{\sin(\frac{1}{x})}{\frac{1}{x}} = ?$}
+	\xfield{$\lim\limits_{x \to \infty}\frac{\sin(\frac{1}{x})}{\frac{1}{x}} = 1$}
+\end{note}
+
+\begin{note}
+	\tags{identite,trigo}
+	\xfield{$\sin x \le$ ?}
+	\xfield{$\sin x \le x$, pour $x \ge 0$}
+\end{note}
+\begin{note}
+	\tags{limites logarithmes}
+	\xfield{$\lim\limits_{x\to1}\frac{\ln(x)}{x-1}=$ ?}
+	\xfield{$\lim\limits_{x\to1}\frac{\ln(x)}{x-1}=1$}
+\end{note}
+
+\begin{note}
+	\tags{limites logarithmes}
+	\xfield{$\lim\limits_{x\to \infty} \frac{ln(x)}{x^p}= $ ?}
+	\xfield{$\lim\limits_{x\to \infty} \frac{ln(x)}{x^p}= 0$ si $p>0$}
+\end{note}
+
+\begin{note}
+	\tags{limites}
+	\xfield{$\lim\limits_{x \to \infty}(1+\frac{a}{x})^x = $ ?}
+	\xfield{$\lim\limits_{x \to \infty}(1+\frac{a}{x})^x = e^a$}
+\end{note}
+
+
+\begin{note}
+	\tags{limites}
+	\xfield{$\lim\limits_{x \to \infty} \sqrt[x]{a} =$ ?}
+	\xfield{$\lim\limits_{x \to \infty} \sqrt[x]{a} = 1$ for $a > 0$}
+\end{note}
+
+\begin{note}
+	\tags{limites}
+	\xfield{$\mbox{Pour } a > 1:\ ,\ \lim\limits_{x \to 0^+} \log_a x = $ ?}
+	\xfield{$\lim\limits_{x \to 0^+} \log_a x = -\infty$}
+\end{note}
+
+\begin{note}
+	\tags{limites}
+	\xfield{$\mbox{Pour } a > 1:\ ,$ $\lim\limits_{x \to \infty} \log_a x = $ ?}
+	\xfield{$\lim\limits_{x \to \infty} \log_a x = \infty$}
+\end{note}
+
+\begin{note}
+	\tags{limites}
+	\xfield{$\mbox{Pour } a > 1:\ ,$ $\lim\limits_{x \to -\infty} a^x = $ ?}
+	\xfield{$\lim\limits_{x \to -\infty} a^x = 0$}
+\end{note}
+
+\begin{note}
+	\tags{limites}
+	\xfield{$\mbox{Pour } a < 1:\ ,$ $\lim\limits_{x \to -\infty} a^x =$ ?}
+	\xfield{$\lim\limits_{x \to -\infty} a^x = \infty$}
+\end{note}
+
+\begin{note}
+	\tags{limites trigo}
+	\xfield{If $x$ is expressed in radians:\\
+	$\lim\limits_{x \to 0} \frac{\sin x}{x} =$ ?}
+	\xfield{$\lim\limits_{x \to 0} \frac{\sin x}{x} = 1$}
+\end{note}
+
+\begin{note}
+	\tags{limites trigo}
+	\xfield{If $x$ is expressed in radians:\\
+	$\lim\limits_{x \to 0} \frac{\tan x}{x} = $ ?}
+	\xfield{$\lim\limits_{x \to 0} \frac{\tan x}{x} = 1$}
+\end{note}
+
+\begin{note}
+	\tags{limites trigo}
+	\xfield{If $x$ is expressed in radians:\\
+	$\lim\limits_{x \to 0} \frac{1-\cos x}{x} =$ ?}
+	\xfield{$\lim\limits_{x \to 0} \frac{1-\cos x}{x} = 0$}
+\end{note}
+
+\begin{note}
+	\tags{limites trigo}
+	\xfield{If $x$ is expressed in radians:\\
+	$\lim\limits_{x \to 0} \frac{1-\cos x}{x^2} =$ ?}
+	\xfield{$\lim\limits_{x \to 0} \frac{1-\cos x}{x^2} = \frac{1}{2}$}
+\end{note}
+
+\begin{note}
+	\tags{limites}
+    \xfield{Comment peut on calculer une limite avec une racine ? Par exemple \\ $\lim\limits_{x \to \infty} \sqrt{n+4} - \sqrt{n}$}
+    \xfield{On multiplie par binôme conjugué.\\dans notre exemple :\\ $\lim\limits_{x  \to \infty} \sqrt{n+4} - \sqrt{n} = \lim\limits_{x \to \infty} \sqrt{n+4} - \sqrt{n} \cdot \frac{\sqrt{n+4} + \sqrt{n}}{\sqrt{n+4} + \sqrt{n}} = \lim\limits_{x \to \infty} \frac{4}{\sqrt{n+4} + \sqrt{n}}$ qui est bien plus simple à cacluler}
+\end{note}
+\begin{note}
+	\tags{series fonctions derivees taylor}
+	\xfield{Donner le développement en série entière de
+	\begin{enumerate}
+		\item $\exp(x)$
+		\item $a^x$
+		\item $\ln(1-x)$
+		\item $\ln(1+x)$
+	\end{enumerate}}
+	\xfield{\begin{enumerate}
+		\item $e^x=\sum\limits_{n=0}^{+{\infty}}{\frac{x^n}{n!}} = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + ... + \frac{x^n}{n!} + ...$ $\forall x \in \mathbb{R}$
+		\item $a^x= e^{x \ln a} =\sum\limits_{n=0}^{+{\infty}}{\frac{(\ln a)^n}{n!}}x^n = 1 + \frac{\ln a}{1!}x + \frac{(\ln a )^2}{2!}x^2 + \frac{(\ln a )^3}{3!}x^3 + \frac{(\ln a )^4}{4!}x^4 + ... + \frac{(\ln a )^n}{n!}x^n + ...$
+		\item $\ln (1-x)=-\sum\limits_{n=1}^{+{\infty}}{x^{n}\over{n}} = - \left( x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + ...\right)$ $\forall x \in ]-1,1[$
+		\item $\ln (1+x)=\sum\limits_{n=1}^{+{\infty}}(-1)^{n-1} \cdot {x^{n}\over{n}} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + ...$  $\forall x \in ]-1,1[$
+	\end{enumerate}}
+\end{note}
+
+\begin{note}
+	\tags{series fonctions derivees taylor}
+	\xfield{Donner le développement en série entière de
+	\begin{enumerate}
+	\item $\sin(x)$
+	\item $\sinh(x)$
+	\item $\cos(x)$
+	\item $\cosh(x)$
+	\end{enumerate} }
+	\xfield{\begin{enumerate}
+		\item $ \sin x=\sum\limits_{n=0}^{+{\infty}}(-1)^n\,{\frac{x^{2n+1}}{(2\,n+1)!}} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ...$ $\forall x \in \mathbb{R}$
+		\item $\sinh x = \sum\limits_{n=0}^{+{\infty}}{\frac{x^{2n+1}}{(2\,n+1)!}} = x + \frac{x^3}{3!} +  \frac{x^5}{5!} +  \frac{x^7}{7!} + ...$ $\forall x \in \mathbb{R}$
+		\item $\cos x=\sum\limits_{n=0}^{+{\infty}}(-1)^n\,{\frac{x^{2n}}{(2\,n)!}} = 1 - \frac{x^2}{2!} +\frac{x^4}{4!} -\frac{x^6}{6!} +...$ $\forall x \in \mathbb{R}$
+		\item $\cosh x = \sum\limits_{n=0}^{+{\infty}}{\frac{x^{2n}}{(2\,n)!}} = 1 +  \frac{x^2}{2!} +  \frac{x^4}{4!} + \frac{x^6}{6!} + ...$ $\forall x \in \mathbb{R}$
+	\end{enumerate} }
+\end{note}
+
+\begin{note}
+	\tags{series fonctions derivees taylor}
+	\xfield{Donner le développement en série entière de $(1+x)^\alpha$, $\alpha \in \mathbb{N}$}
+	\xfield{$(1+x)^\alpha = \sum\limits_{n=0}^{\alpha}{{\alpha \choose n}\, x^n}$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int x^n dx$}
+	\xfield{$\frac{1}{n+1}x^{n+1} + C$, $n\neq 1, C\in \mathbb{R}$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int \frac{1}{x} dx$}
+	\xfield{$\ln(\vert x\vert ) + C$, $x \in \mathbb{R}^*$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int e^x dx$}
+	\xfield{$e^x + C$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int \ln(x) dx$}
+	\xfield{$x\ln(x)-x+C$, $x>0$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int \frac{f'(x)}{f(x)} dx$}
+	\xfield{$\ln(\vert f(x) \vert ) +C$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int e^{x^2}2x dx$}
+	\xfield{$e^{x^2}+C$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int \cos(x) dx$}
+	\xfield{$\sin(x) +C$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int \sin(x) dx$}
+	\xfield{$-\cos(x) +C$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int \tan(x)  dx =\int \frac{\sin(x)}{\cos(x)} dx$}
+	\xfield{$-\ln(\vert \cos(x) \vert ) + C$, $x \in D(\tan)$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int \frac{1}{1+x^2} dx$}
+	\xfield{$\arctan(x) + C$}
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{$\int \frac{f'(x)}{1+f(x)^2} dx$}
+	\xfield{$\arctan(f(x)) +C$}
+\end{note}
+
+
+\begin{note}
+	\tags{integrales}
+	\xfield{Donner le théorème d'intégration par changement de variable.}
+	\xfield{Soit $f: \mathbb{R} \to \mathbb{R},\ [a,b] \subset D(f)$, $f$ continue sur $[a,b]$.\\
+	Soit $\varphi : [\alpha,\beta] \to [a,b]$, $\varphi$ continûment dérivable sur $[\alpha,\beta]$, $\varphi(\alpha) = a$, $\varphi(\beta) = b$\\
+	Alors : $\int_a^b f(x) dx = \int_\alpha^\beta f(\varphi(u))\varphi'(u) du$\\
+	\emph{Remarque}: Si $\varphi$ est bijectif alors $F(x) = G(\varphi^{-1}(x))$ }
+\end{note}
+
+\begin{note}
+	\tags{integrales}
+	\xfield{Donner le théorème d'intégration par partie.}
+	\xfield{Soit $f,g : [a,b] \to \mathbb{R}$ continûment dérivable sur $[a,b]$ (=dérivable avec une fonction dérivée qui est continue). Alors :\\
+	$\int_a^b f'(x)g(x) dx = \big[f(x)\cdot g(x)\big]_a^b - \int_a^b f(x)g'(x) dx$\\
+	Ou en pratique :\\
+	$\int_a^b f(x)g(x) dx = \big[ F(x) g(x)\big]_a^b - \int_a^b F(x) g'(x) dx$\\
+	avec $f$ continue sur $[a,b]$ et $g$ continûment dérivable sur $[a,b]$. $F$ une primitive de $f$.\\
+	et dans le cas d'une intégrale indéfinie :\\
+	$\int f(x)g(x) dx = F(x)g(x) - \int F(x)g'(x) dx$ }
+\end{note}
+\begin{note}
+	\tags{derivees}
+	\xfield{$x>0, (\vert x\vert )' = $ ?\\
+			$x<0, (\vert x\vert )' = $ ? }
+	\xfield{$x>0, (\vert x\vert )' = 1$\\
+			$x<0, (\vert x\vert )' = -1$}
+\end{note}
+
+\begin{note}
+	\tags{derivees}
+	\xfield{Dérivée de :
+	\begin{enumerate}
+		\item $(f(x)\cdot g(x))'$
+		\item $f(g(x))'$
+\end{enumerate}	}
+	\xfield{\begin{enumerate}
+		\item $(f(x)\cdot g(x))' =  f'(x)\cdot g(x) + f(x)\cdot g'(x)$
+		\item $f(g(x))' = f'(g(x))\cdot g'(x)$
+	\end{enumerate} }
+\end{note}
+
+\begin{note}
+	\tags{derivees}
+	\xfield{$\sin(x)'$ ?}
+	\xfield{$\cos(x)$}
+\end{note}
+
+\begin{note}
+	\tags{derivees}
+	\xfield{$\cos(x)'$ ?}
+	\xfield{$-\sin(x)$}
+\end{note}
+
+\begin{note}
+	\tags{derivees}
+	\xfield{$\tan(x)'$ ?}
+	\xfield{$\frac{1}{\cos^2(x)}$}
+\end{note}
+
+\begin{note}
+	\tags{derivees}
+	\xfield{$\arcsin(x)'$ ?}
+	\xfield{$\frac{1}{\sqrt{1-x^2}}$}
+\end{note}
+
+\begin{note}
+	\tags{derivees}
+	\xfield{$\arccos(x)'$ ?}
+	\xfield{$\frac{-1}{\sqrt{1-x^2}}$}
+\end{note}
+
+
+\begin{note}
+	\tags{derivees}
+	\xfield{$\arctan(x)'$ ?}
+	\xfield{$\frac{1}{x^2+1}$}
+\end{note}
+
+\begin{note}
+	\tags{derivees}
+	\xfield{$(\frac{1}{x})'$ ?}
+	\xfield{$-\frac{1}{x^2}$}
+\end{note}
+
+\begin{note}
+	\tags{derivees}
+	\xfield{$(a^x)'$ ?}
+	\xfield{$a^x \ln(a)$}
+\end{note}
+
+\begin{note}
+	\tags{derivees}
+	\xfield{$(\sqrt[x]{a})'$ ?}
+	\xfield{$-\frac{\sqrt[x]{a}\ln a}{x^2}$}
+\end{note}
+
+\begin{note}
+	\tags{derivees}
+	\xfield{$(\log_a x)'$ ?}
+	\xfield{$\frac{1}{x\ln a}$}
+\end{note}
+\begin{note}
+	\tags{integrales}
+	\xfield{Comment intégrer une fonction sous la forme $f(x) = \frac{p(x)}{q(x)}$ avec $p,q$ des polynômes et deg($p$) $<$ deg($q$) plus facilement ?.}
+	\xfield{Il suffit d'utiliser les fractions partielles (partial fractions) vues au cours de DS.}
+\end{note}
+
+\end{document}
