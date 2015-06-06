@@ -16,8 +16,124 @@
 \begin{document}
 
 \begin{note}
-	\tags{}
-	\xfield{}
-	\xfield{}
+	\xfield{Si les $M$ symboles de la source $S$ sont équiprobables, que vaut $H(S)$ ?}
+	\xfield{$H(S) = \log_2(M)$}
+\end{note}
+
+\begin{note}
+	\xfield{Soit $S=(S_1,\hdots,S_n)$ une source composée, comment est bornée son entropie ?}
+	\xfield{\begin{itemize}
+	\item $H(S_1,\hdots,S_n) \le H(S_1) + \hdots + H(S_n)$
+	\item $H(S_1,\hdots,S_n) = H(S_1) + \hdots + H(S_n)$ si et seulement si les $n$ sources marginales $S_1,\hdots,S_n$ sont indépendantes.
+	\end{itemize}}
+\end{note}
+
+\begin{note}
+	\xfield{Quel est le lien entre code sans préfixe et code instantané}
+	\xfield{Un code est sans préfixe si et seulement si il est instantané}
+\end{note}
+\begin{note}
+	\xfield{Donner l'inégalité de Kraft}
+	\xfield{Soit $\Gamma$ un code D-aire dont les longueurs de mots $M$ sont $\ell_1,\hdots,\ell_M$.\begin{align*}
+	\text{Décodage unique} \rightarrow D^{-\ell_1}+ \hdots + D^{-\ell_M} \le 1
+	\end{align*}
+	Par contraposée, si l'inégalité n'est pas respectée, le code n'est pas à décodage unique.\\
+	Attention : si l'inégalité est respéctée, le code n'est pas forcément à décodage unique, mais il existe un code avec des mots de même longeur qui est à décodage unique.}
+\end{note}
+\begin{note}
+	\xfield{Donner la formule de la longeur moyenne d'un code}
+	\xfield{Soit une source $S$ d'alphabet $\mathcal{A}$ et de densité de probabilité $p$ et soit $\Gamma$ un code $D$-aire de la source $S$. Alors la longueur moyenne est :
+	\begin{align*}
+	L(\Gamma) = \sum\limits_{s \in \mathcal{A}} p(s)\ell(\Gamma(s))
+	\end{align*}
+	avec pour unité "le symbole de code par symbole de source"\\
+	 (Si $D=2$ on dit "bits par symbole de source")}
+\end{note}
+\begin{note}
+\xfield{Donner la première inégalité de l'entropie (elle est valable pour tout code à décodage unique)}
+\xfield{Soit $\Gamma$ un code $D$-aire d'une source $S$. Si $\Gamma$ est à décodage unique sa longeur moyenne satisfait : \begin{align*}
+L(\Gamma) \ge \frac{H(S)}{\log_2(D)}
+\end{align*}}
+\end{note}
+
+\begin{note}
+\xfield{Donner la deuxième inégalité de l'entropie (valable pour tout code de Shannon-Fano}
+\xfield{$\frac{H(S)}{\log_2(D)} \le L(\Gamma_{SF}) < \frac{H(S)}{\log_2(D)} + 1$}
+\end{note}
+
+\begin{note}
+	\xfield{Donner l'inégalité pour un code de Huffman}
+	\xfield{$L(\Gamma_H) \le L(\Gamma)$}
+\end{note}
+
+\begin{note}
+	\xfield{Soit $S=(S_1,S_2)$ une source composée. Quelle est l'entropie conditionnelle de $S_2$ sachant $S_1$ ?}
+	\xfield{Tout d'abord, voyons comment calculer l'entropie de $S_2$ sachant que $S1=s_1$ : \begin{align*}
+	H(S_2|S_1 = s_1) = - \sum\limits_{s_2 \in \mathcal{A}_2} p_{s_2|s_1}(s_2|s_1) \cdot \log_2(p_{s_2|s_1}(s_2|s_1))
+	\end{align*}
+	L'entropie conditionelle de $S_2$ sachant $S_1$ en est la moyenne :
+	\begin{align*}
+	H(S_2|S_1)= \sum\limits_{s_1 \in \mathcal{A}_1} H(S_2|S_1=s_1) \cdot p_{s_1}(s_1)
+	\end{align*}}
+\end{note}
+
+\begin{note}
+\xfield{Donner la règle de l'enchaînement utile pour le calcul de l'entropie conditionnelle}
+\xfield{Soit $S=(S_1,S_2)$ une source composée. \begin{align*}
+	H(S_1,S_2) &= H(S_1) + H(S_2|S_1)\\
+	&= H(S_2) + H(S_1|S_2)
+\end{align*}}
+\end{note}
+
+\begin{note}
+	\xfield{Comment conditionner affecte l'entropie ? (pour une source $S_a=(S_{a1},S_{a2})$ et pour une source $S_b=(S_{b1},S_{b2},S_{b3}))$}
+	\xfield{Conditionner réduit l'entropie :
+	\begin{align*}
+	&H(S_{a2} |S_{a1}) \le S_{a2}\\
+	&H(S_{a2} | S_{a1}) = S_{a2} \text{ Si et seulement si $S_{a1}$ et $S_{a2}$ sont indépendantes}\\
+	&H(S_{b3}|S_{b1},S_{b2}) \le H(S_{b3}|S_{b2})
+	\end{align*}}
+\end{note}
+\begin{note}
+\xfield{Donner le théorème du calcul incrémental de l'entropie conditionnelle pour une source $S=(S_1,S_2,\hdots,S_n)$}
+\xfield{\begin{align*}
+H(S_1,S_2,\hdots,S_n) &= H(S_n|H(S_1,S_2,\hdots,S_{n-1}) +  H(S_{n-1}|H(S_1,S_2,\hdots,S_{n-2})\\
+&+ \hdots + H(S_3|H(S_1,S_2) + H(S_2|S_1) + H(S_1)
+\end{align*}
+}
+\end{note}
+\begin{note}
+	\xfield{Expliquer ce que cela veut dire si une source est fonction d'une autre et qu'elle est la condition pour que cela soit le cas}
+	\xfield{Une source est fonction d'une autre si connaître le premier implique le second.\\
+	$S_2$ est fonction de $S_1$ si et seulement si $H(S_2|S_1) = 0$\\
+	Aussi, si $S_2$ est fonction de $S_1$, alors :
+	\begin{align*}
+	H(S_1,S_2) &= H(S_1)\\
+	H(S_2) &\le H(S_1)
+	\end{align*}}
+\end{note}
+
+\begin{note}
+	\xfield{Quels sont les deux conditions pour qu'une source $S$ soit une source étendue ?}
+	\xfield{\begin{enumerate}
+	\item $S^n$ est une source à $n$ composantes, sur l'alphabet $\underbrace{A\times \hdots \times A}_{n \text{ fois}}$; notons $p_{S^n}$ sa densité de probabilité.
+	\item La densité de porbabilité de la source constituée des $n$ premières sources marginales de $S^{n+k}$ est égale à $p_{S^n}$, pour tous $k \ge 1$ et $n\ge 1$.
+	\end{enumerate}}
+\end{note}
+
+\begin{note}
+	\xfield{Quels sont les conditions pour qu'une source étendue soit \textbf{régulière} ?}
+	\xfield{\begin{enumerate}
+	\item $H(S) = \lim\limits_{n \to +\infty} H(S_n)$
+	\item $H^*(S) = \lim\limits_{n \to +\infty} H(S_n|S_1,S_2,\hdots,S_{n-1})$
+	\end{enumerate}}
+\end{note}
+
+\begin{note}
+	\xfield{Quel est l'entropie d'un bloc d'une source étendue régulière ?}
+	\xfield{\begin{align*}
+	&\lim\limits_{n \to +\infty} \frac{H(S_1,S_2,\hdots,S_n)}{n} = H^*(S)\\
+	\text{On sait aussi que } &\lim\limits_{n \to +\infty} \frac{L^n_{SF}}{n}=\lim\limits_{n \to +\infty}\frac{L^n_H}{n}=\frac{H^*(S)}{\log_2(D)}
+	\end{align*}}
 \end{note}
 \end{document}
