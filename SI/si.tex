@@ -17,7 +17,119 @@
 
 \begin{note}
 	\tags{}
-	\xfield{}
-	\xfield{}
+	\xfield{
+		Donner la formule de l'entropie.	
+	}
+	\xfield{
+		$$H(S) = \sum\limits_{s \in S} p(s)\log_2\left(\frac{1}{p(s)}\right) = -\sum\limits_{s \in S} p(s)\log_2(p(s))$$	
+	}
 \end{note}
+
+\begin{note}
+	\tags{}
+	\xfield{
+		Donner l'inverse de $[0]_m$.
+	}
+	\xfield{
+		$[0]_m$ n'a jamais d'inverse.
+	}
+\end{note}
+
+\begin{note}
+	\tags{}
+	\xfield{
+		Énumérer les propriétés d'un groupe commutatif $G$.
+	}
+	\xfield{
+		\begin{itemize}
+		\item \textbf{Associativité} $a \star (b \star c) = (a \star b) \star c$
+		\item \textbf{Neutre} il existe un $e$ tel que $e \star a = a \star e = a$
+		\item \textbf{Commutativité} $a \star b = b \star a$
+		\item \textbf{Symétrique} $\forall a \in G \exists a' \Rightarrow a \star a' = e$
+		\end{itemize}
+	}
+\end{note}
+
+\begin{note}
+	\tags{}
+	\xfield{
+		Comment calculer $K = m$ dans RSA?
+	}
+	\xfield{
+		$$K = m = pq$$
+	}
+\end{note}
+
+\begin{note}
+\xfield{Comment calculer k dans RSA?}
+\xfield{$$k = ppmc(p-1,q-1)$$}
+\end{note}
+
+\begin{note}
+\xfield{Comment calculer le texte chiffré dans RSA}
+\xfield{$$[C]_m, = [P^{e}]_m$$}
+\end{note}
+
+\begin{note}
+\xfield{Comment calculer l'exposant de déchiffrement $f$ dans RSA?}
+\xfield{$$[f]_k = [e]_{k}^{-1}$$}
+\end{note}
+
+\begin{note}
+\xfield{Comment obtenir P à partir de C et f dans RSA?}
+\xfield{$$P = [C^f]_m$$}
+\end{note}
+
+\begin{note}
+\xfield{Donner la définition de la distance de Hamming.}
+\xfield{La \textbf{Distance de Hamming} $:= d(x,y)$ est le nombre de positions où x et y diffèrent : \
+$$d(x,y) := card\{i \in \{1...n\} : x_i \neq y_i\}$$
+}
+\end{note}
+
+\begin{note}
+\xfield{Donner la définition de \textbf{distance minimale} $d_{min}(C)$ pour un code correcteur C.}
+\xfield{La distance minimale est la plus petite distance dans un ensemble de mots de code. Donné un ensemble C, on peut comparer toutes les distances de Hamming, et la plus petite est la distance minimale. Il faut cependant que les deux chaînes soient différentes.}
+\end{note}
+
+\begin{note}
+\xfield{Dans quelles conditions un code correcteur peut-il faire une \textbf{détection d'erreur} de poids $\leq p$?}
+\xfield{$$p < d_{min}(C)$$}
+\end{note}
+
+\begin{note}
+\xfield{Dans quelles conditions un code correcteur peut-il faire une \textbf{correction d'effacement} de poids $\leq p$?}
+\xfield{$$p < d_{min}(C)$$}
+\end{note}
+
+\begin{note}
+\xfield{Dans quelles conditions un code correcteur peut-il faire une \textbf{correction d'erreur} de poids $\leq p$?}
+\xfield{$$p < \frac{d_{min}(C)}{2}$$}
+\end{note}
+
+\begin{note}
+\xfield{Donner les \textbf{deux} définitions de la \textbf{Borne de Singleton}. }
+\xfield{
+Pour un code en bloc C de longueur n, de rendement r et avec des longueurs de mot k.
+$$d_{min}(C) \leq n(1-r) + 1$$
+$$d_{min}(C) \leq n-k+1$$
+}
+\end{note}
+
+\begin{note}
+\xfield{Qu'est-ce que la caractéristique pour un corps fini?}
+\xfield{La période de l'élément neutre de la multiplication. La caractéristique de ${\mathbb{Z}}/{p\mathbb{Z}}$ est p.}
+\end{note}
+
+\begin{note}
+\xfield{Donner le Théorème en trois partie à la con des corps finis.}
+\xfield{
+\begin{itemize}
+\item Le cardinal d'un corps fini est une puissance de sa caractéristique.
+\item Tous les corps finis de même cardinal sont isomorphes.
+\item Pour tout nombre premier $p$ et tout entier $m \geq 1$, il existe un corps fini de  cardinal $p^m$.
+\end{itemize}
+}
+\end{note}
+
 \end{document}
