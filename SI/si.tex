@@ -16,6 +16,16 @@
 \begin{document}
 
 \begin{note}
+	\tags{}
+	\xfield{
+		Donner la formule de l'entropie.	
+	}
+	\xfield{
+		$$H(S) = \sum\limits_{s \in S} p(s)\log_2\left(\frac{1}{p(s)}\right) = -\sum\limits_{s \in S} p(s)\log_2(p(s))$$	
+	}
+\end{note}
+
+\begin{note}
 	\xfield{Si les $M$ symboles de la source $S$ sont équiprobables, que vaut $H(S)$ ?}
 	\xfield{$H(S) = \log_2(M)$}
 \end{note}
@@ -130,6 +140,20 @@ H(S_1,S_2,\hdots,S_n) &= H(S_n|H(S_1,S_2,\hdots,S_{n-1}) +  H(S_{n-1}|H(S_1,S_2,
 \end{note}
 
 \begin{note}
+	\xfield{Pour une source étendue, comment calculer :
+	\begin{enumerate}
+	\item l'entropie d'\textbf{un} symbole
+	\item l'entropie \textbf{par} symbole
+	\item les \textbf{bits} par symbole 
+	\end{enumerate} ?}
+	\xfield{\begin{enumerate}
+	\item $H(S) = \lim\limits_{n \to +\infty} H(S_n)$
+	\item $H^*(S) = \lim\limits_{n \to +\infty} H(S_n|S_1,S_2,\hdots,S_{n-1})$
+	\item $\frac{L^n}{n}$
+	\end{enumerate} }
+\end{note}
+
+\begin{note}
 	\xfield{Quel est l'entropie d'un bloc d'une source étendue régulière ?}
 	\xfield{\begin{align*}
 	&\lim\limits_{n \to +\infty} \frac{H(S_1,S_2,\hdots,S_n)}{n} = H^*(S)\\
@@ -138,13 +162,20 @@ H(S_1,S_2,\hdots,S_n) &= H(S_n|H(S_1,S_2,\hdots,S_{n-1}) +  H(S_{n-1}|H(S_1,S_2,
 \end{note}
 
 \begin{note}
-	\tags{}
-	\xfield{
-		Donner la formule de l'entropie.	
-	}
-	\xfield{
-		$$H(S) = \sum\limits_{s \in S} p(s)\log_2\left(\frac{1}{p(s)}\right) = -\sum\limits_{s \in S} p(s)\log_2(p(s))$$	
-	}
+	\xfield{Quel est le rapport de compression d'un code d'une source étendue ?}
+	\xfield{Il s'agit du rapport de sa longeur moyenne et celle d'une code "stupide". La formule exacte est :
+	\begin{align*}
+		\frac{L^n}{n\lceil\log_2(M)\rceil}
+	\end{align*}
+	Le rapport de compression d'un code optimal est 
+	\begin{align*}
+		\sim \frac{H^*(S)}{\log_2(D)}
+	\end{align*}}
+\end{note}
+
+\begin{note}
+	\xfield{Quel inégalité doit satisfaire les trois composants ($P=$\textit{Plaintext}, $C=$\textit{Cyphertext}, $K=$\textit{key}) pour être un système de cryptographie à confidentialité parfaite ?}
+	\xfield{$H(P)\le H(C) \le H(K)$}
 \end{note}
 
 \begin{note}
@@ -252,6 +283,57 @@ $$d_{min}(C) \leq n-k+1$$
 \item Pour tout nombre premier $p$ et tout entier $m \geq 1$, il existe un corps fini de  cardinal $p^m$.
 \end{itemize}
 }
+\end{note}
+
+\begin{note}
+\xfield{Que vaut le cardinal d'une corps fini $\varepsilon$ ?}
+\xfield{Notons $n$ la charactéristique de $\varepsilon$, alors card($\varepsilon)=n^{\text{dim}(\varepsilon)}$}
+\end{note}
+
+\begin{note}
+	\xfield{Notons $S$ l'ensemble des solutions dans $V=K^n$ de $m$ équation linéaire, un espace linéaire.\\
+	Combien d'équation comporte la suite minimale d'équation linéaire dont l'ensemble des solutions est $S$ et dont les vecteurs de coefficients sont linéairement indépendants ?}
+	\xfield{Avec dim($S$)=k, $n-k$ équations.}
+\end{note}
+
+\begin{note}
+	\xfield{Quelle est la distance minimale d'un code de Reed Solomon de paramètre $(n,k)$?}
+	\xfield{$\text{d}_\text{min} = n - k +1$, en d'autre terme, il atteint la borne de Singleton.}
+\end{note}
+
+\begin{note}
+	\xfield{Comment créer un code de Reed Solomon, avec les paramètre $n,k$ donnés ?}
+	\xfield{Toute d'abord explicitons la notation $P_{\vec{u}}(X)$ :\\
+	Prenons $\vec{u}=(u_1,u_2, \hdots, u_k) \in F_k$ pour certains champs finis $F$. Chaque $\vec{u}$ définit un polynôme $P_{\vec{u}}(X)$ (dans
+$F$) : \begin{align*}
+&P_{\vec{u}}(X) = u_1 + u_2 x + u_3 x^2 + u_4 x^3 + \hdots + u_k x^{k-1}
+\intertext{Par exemple, pour $\vec{u} = (3,2)$}
+&P_{\vec{u}}(X) = 3 + 2X
+\end{align*}
+Maintenant pour créer un code de Reed Solomon avec les paramètre $1\le k \le n$:
+\begin{enumerate}
+\item L’alphabet est un corps fini $K$ de cardinal $\ge n$
+\item Choisissons $n$ éléments distincts de $K$, $a_1 , a_2 , a_3 ,\hdots, a_n$ . Une suite de $k$ symboles $\vec{u} = (u_1 , u_2 , \hdots, u_k ) \in K^k$ est encodée en la suite de $n$ symboles $\vec{x} = (x_1 ,\hdots, x_n ) \in K^k$ définie par
+\begin{align*}
+x_i = P_{\vec{u}}(a_i) \text{ pour } i = 1,\hdots,n 
+\end{align*}
+\end{enumerate}
+Le code de Reed Solomon $C$ est l’ensemble de tous les encodages possibles,
+pour tous les $\vec{u} \in K^k$ . C’est donc un code en bloc de longueur $n$.}
+\end{note}
+
+\begin{note}
+	\xfield{Comment construire facilement la matrice génératrice $G$ pour un code de type Reed Solomon ?}
+	\xfield{En ayant déterminé les $n$ éléments $a_1,a_2,\hdots,a_n$ de l'alphabet du code, la matrice $G$ est :
+	\begin{align*}
+	G = \begin{pmatrix}
+	1 & 1 & 1 & \cdots & 1\\
+	a_1 & a_2 & a_3 & \cdots & a_n\\
+	(a_1)^2 & (a_2)^2 & (a_3)^2 & \cdots & (a_n)^2\\
+	\vdots & \vdots & \vdots & \ddots & \vdots\\
+	(a_1)^{k-1} & (a_2)^{k-1} & (a_3)^{k-1} & \cdots & (a_n)^{k-1}
+	\end{pmatrix}
+	\end{align*} }
 \end{note}
 
 \end{document}
