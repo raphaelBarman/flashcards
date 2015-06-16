@@ -27,4 +27,129 @@
 	$$\det(J_G(r,\varphi,z)) = ?$$}
 	\xfield{$$\det(J_G(r,\varphi,z)) = r$$}
 \end{note}
+\begin{note}
+	\xfield{Donner la forme d'une équation homogène du deuxième ordre sans coefficient constants et expliquer comment la résoudre.}
+	\xfield{Les équations homogène de la forme :
+$$y''+p(x)y'+q(x)y=0$$
+avec p,q des fonction continues sur un intervalle $I$, peuvent être résolues, si l'on connaît une solution non nulle $y_1$, en posant
+$$y(x) = U(x)\cdot y_1(x)$$
+avec $U$ une primitive d'une nouvelle fonction inconnue $u$.\\
+En développant,on obtient finalement :
+\begin{align*}
+y_1(x) \cdot u'(x) + (2\cdot y_1'(x) + p(x)\cdot y_1(x))\cdot u(x) &= 0
+\end{align*}
+que l'on sait résoudre.}
+\end{note}
+\begin{note}
+	\xfield{Donner la forme d'une équation de Ricatti et expliquer comment la résoudre.}
+	\xfield{C'est une équation de la forme :
+$$y'=a(x)\cdot y^2 + b(x) \cdot y+c(x)$$
+avec $a,b,c$ des fonctions continues sur un intervalle $I$.
+On ne peut pas la résoudre en général, sauf si l'on connaît déjà une solution.\\
+Donné une solution $y_1(x)$, on pose :
+$$y(x)=y_1(x)+\frac{1}{u(x)}$$
+avec $u(x)$ inconnu.\\
+En développant, on obtient finalement :
+\begin{align*}
+&u'+(2\cdot a \cdot y_1 + b)\cdot u = -a
+\end{align*}que l'on sait résoudre.}
+\end{note}
+\begin{note}
+\xfield{$$\nabla \left( \frac{g}{h} \right) =  ?$$}
+\xfield{$$\nabla \left( \frac{g}{h} \right) = \frac{1}{h}\nabla g + \frac{g}{h^2} \nabla h$$ }
+\end{note}
+\begin{note}
+\xfield{Donner le théorème des fonctions implicites}
+\xfield{Une équation $F(x_0,y_0) = 0$ avec $\frac{\delta F}{\delta y} \neq 0$ défini une fonction $y=f(x)$ implicite au voisinage de $(x_0,y_0)$. Et on a :
+$$F(x, f(x)) = 0 \Rightarrow f(x_0) = y_0$$
+Et aussi/surtout :
+$$f'(x) = - \frac{\delta_xF (x,f(x))}{\delta_yF(x,f(x))}$$}
+\end{note}
+\begin{note}
+\xfield{Donner la définition de la dérivée directionnelle.}
+\xfield{La dérivée directionnelle en $(x_0,y_0)$, dans la direction du vecteur $\mathbf{e}$ s'obtient soit en appliquant la définition de la dérivée. 
+$$\delta_e f(x,y) = \lim_{t \to 0} \frac{f(t\mathbf{e}_x, t\mathbf{e}_y) - f(x_0,y_0)}{t}$$
+Ou en utilisant que
+$$\delta_e f(x_0,y_0) = \nabla f(x_0,y_0) \cdot \mathbf{e}$$ }
+\end{note}
+
+\begin{note}
+\xfield{Quel $\mathbf{e}$ choisir pour obtenir la dérivée directionnelle maximale (minimale) ?}
+\xfield{La dérivée directionnelle est maximale (minimale) si elle point dans le sens (sens opposé) de $\nabla f(x_0,y_0)$, et donc :
+\begin{align*}
+mathbf{e} = \frac{\nabla f(x_0,y_0)}{\vert \vert \nabla f(x_0,y_0) \vert \vert} \tag*{(-$\mathbf{e}$ pour minimal)}
+\end{align*}La pente vaut $\vert \vert \nabla f(x_0,y_0) \vert \vert$ en ce point. }
+\end{note}
+\begin{note}
+\xfield{Expliquer comment dérivier $$F(t) = \int_{a(t)}^{b(t)} f(x,t)dx $$}
+\xfield{$$F(t) = \int_{a(t)}^{b(t)} f(x,t)dx $$
+$$\frac{d}{dt} F(t) = -f(a(t),t)a'(t) + f(b(t),t)b'(t) + \int_{a(t)}^{b(t)} \delta _t f(x,t) dx$$
+Dans les cas particulier ou $a(t)$ et/ou $b(t)$ sont constant les termes avec leur dérivées sautent. Particulièrement si $a(t) = a, b(t) = b$ :
+$$\frac{d}{dt} F(t) = \int_a^b \delta_t f(x,t)dx$$}
+\end{note}
+
+\begin{note}
+\xfield{Points critiques : donner les valeurs des divers $\Lambda$ et leur signification pour $n=2$ et $n=3$}
+\xfield{\underline{Pour n=2 :}\\
+On a :
+\begin{align*}
+\Lambda_1 &= \delta x^2 f(x,y)  = H_{11}(f)\\
+\Lambda_2 &= det(H_f(x_0,y_0)) 
+\end{align*}
+\begin{center}
+\begin{tabular}{c|c|c}
+$\Lambda_2$ & $\Lambda_1$ & Conclusion \\ 
+\hline
+$>$ 0 & $>$ 0 & minimum local \\ 
+$>$ 0 & $<$ 0 & maximum local \\ 
+$<$ 0 & ? & point-selle \\ 
+= 0 & ? & ? \\ 
+\end{tabular} 
+\end{center}
+\underline{Pour n=3 :}\\
+On a :
+\begin{align*}
+\Lambda_1 &= \dfrac{\partial^2 f}{\partial x^2} f(x_0,y_0,z_0)  = H_{11}(f)\\
+\Lambda_2 &= \det\begin{pmatrix}
+  \dfrac{\partial^2 f}{\partial x^2} & \dfrac{\partial^2 f}{\partial x\,\partial y}\\
+  \dfrac{\partial^2 f}{\partial y\,\partial x} & \dfrac{\partial^2 f}{\partial y^2} \\[2.2ex]
+\end{pmatrix} = \dfrac{\partial^2 f}{\partial x^2} \cdot \dfrac{\partial^2 f}{\partial y^2} - \dfrac{\partial^2 f}{\partial x\,\partial y} \cdot \dfrac{\partial^2 f}{\partial y\,\partial x}\\
+\Lambda_3 &= \det(H_f(x_0,y_0,z_0)) 
+\end{align*}
+\begin{center}
+\begin{tabular}{c|c|c|c}
+$\Lambda_3$ & $\Lambda_2$ & $\Lambda_1$ & Conclusion \\ 
+\hline
+$>$ 0& $>$ 0 & $>$ 0 & minimum local \\ 
+$<$ 0 & $>$ 0 & $<$ 0 & maximum local \\ 
+$\neq 0$ & ? & ? & point-selle \\ 
+\end{tabular} 
+\end{center}}
+\end{note}
+
+\begin{note}
+\xfield{Dire où peuvent se trouver les extremums absolus pour une fonction continue sur un domain borné et fermé.}
+\xfield{Ils peuvent se trouver :
+\begin{itemize}
+\item Sur un extremum local
+\item Sur un point ou f n'est pas différentiable
+\item Sur le bord du domaine 
+\end{itemize}}
+\end{note}
+
+\begin{note}
+\xfield{Expliquer comment trouver un extremum sous contrainte d'une autre fonction.}
+\xfield{Si $f(x,y)$ est une fonction à maximiser sous la contrainte $g(x,y) = 0$ on peut définir la fonction de Lagrange :
+$$F(x,y,\lambda) = f(x,y) - \lambda g(x,y)$$
+Ou :
+$$F(x,y,\lambda, \mu) = f(x,y) - \lambda g(x,y) - \mu h(x,y)$$
+Si il y a plusieurs contraintes.
+On pose ensuite $\nabla F(x,y,\lambda, (\mu)) = \vec{0}$: Et on résout.}
+\end{note}
+
+\begin{note}
+\xfield{Comment trouver la fonction d'un plan tangent ?}
+\xfield{Donnée une fonction de la forme $z=f(x,y)$ (il faut isoler z si ce n'est pas le cas), le plan tangent en $x_0,y_0,z_0$ (également donné) On sait que
+$$ z = f(x_0,y_0) + \frac{\delta f}{\delta x}f(x_0,y_0)(x-x_0) + \frac{\delta f}{\delta y}f(x_0,y_0)(y-y_0) $$}
+\end{note}
 \end{document}
