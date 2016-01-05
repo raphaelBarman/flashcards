@@ -68,7 +68,7 @@ $$f'(x) = - \frac{\delta_xF (x,f(x))}{\delta_yF(x,f(x))}$$}
 \begin{note}
 \xfield{Donner la définition de la dérivée directionnelle.}
 \xfield{La dérivée directionnelle en $(x_0,y_0)$, dans la direction du vecteur $\mathbf{e}$ s'obtient soit en appliquant la définition de la dérivée. 
-$$\delta_e f(x,y) = \lim_{t \to 0} \frac{f(t\mathbf{e}_x, t\mathbf{e}_y) - f(x_0,y_0)}{t}$$
+$$\delta_e f(x,y) = \lim_{t \to 0} \frac{f(x_0+t\mathbf{e}_x,y_0 + t\mathbf{e}_y) - f(x_0,y_0)}{t}$$
 Ou en utilisant que
 $$\delta_e f(x_0,y_0) = \nabla f(x_0,y_0) \cdot \mathbf{e}$$ }
 \end{note}
@@ -150,6 +150,14 @@ On pose ensuite $\nabla F(x,y,\lambda, (\mu)) = \vec{0}$: Et on résout.}
 \begin{note}
 \xfield{Comment trouver la fonction d'un plan tangent ?}
 \xfield{Donnée une fonction de la forme $z=f(x,y)$ (il faut isoler z si ce n'est pas le cas), le plan tangent en $x_0,y_0,z_0$ (également donné) On sait que
-$$ z = f(x_0,y_0) + \frac{\delta f}{\delta x}f(x_0,y_0)(x-x_0) + \frac{\delta f}{\delta y}f(x_0,y_0)(y-y_0) $$}
+$$ z = f(x_0,y_0) + \frac{\delta f}{\delta x}f(x_0,y_0)(x-x_0) + \frac{\delta f}{\delta y}f(x_0,y_0)(y-y_0) $$ forme un plan tangent.}
+\end{note}
+
+\begin{note}
+\xfield{Comment trouver la fonction d'un plan tangent d'une fonction implicite ?}
+\xfield{Si on a une surface définie par une équation du type $F(x,y,z) = 0$ et que $\frac{dF}{dz}(x_0,y_0,z_0) \neq 0$ on peut définir l'équation du plan tangent comme :
+$$\nabla F(x_0,y_0,z_0) \cdot (x-x_0,y-y_0,z-z_0) = 0$$
+Ou $\cdot$ est le produit scalaire. Cela correspond à prendre tout vecteur \textbf{orthogonal} à la normale en ce point de la surface. Cela défini bien un plan.
+}
 \end{note}
 \end{document}
