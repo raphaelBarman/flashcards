@@ -1,0 +1,132 @@
+% -*- coding-system:utf-8 
+% LATEX PREAMBLE --- needs to be imported manually
+\documentclass[12pt]{article}
+\special{papersize=3in,5in}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath}
+\pagestyle{empty}
+\setlength{\parindent}{0in}
+
+%%% commands that do not need to imported into Anki:
+\usepackage{mdframed}
+\newcommand*{\xfield}[1]{\begin{mdframed}\centering #1\end{mdframed}\bigskip}
+\newenvironment{note}{}{}
+\newcommand*{\tags}[1]{\paragraph{tags: }#1} 
+% END OF THE PREAMBLE
+\begin{document}
+
+\begin{note}
+	\tags{identite,trigo,integrales,an3}
+	\xfield{$\int sin^2x cosx dx$ ?}
+	\xfield{$sin^3x$}
+\end{note}
+
+\begin{note}
+	\tags{identite,trigo,an3}
+	\xfield{$sin^2x$ ?}
+	\xfield{$\frac{1-cos(2x}{2}$}
+\end{note}
+
+\begin{note}
+	\tags{identite,trigo,an3}
+	\xfield{$cos 2x$ ?}
+	\xfield{$cos^2-sin^2$}
+\end{note}
+
+\begin{note}
+	\tags{identite,trigo,integrales,an3}
+	\xfield{$\int\limits_0^{2\pi} cos^n$, n impair ?}
+	\xfield{$0$}
+\end{note}
+
+\begin{note}
+	\tags{identite,trigo,integrales,an3}
+	\xfield{$\int sin^3x dx$?}
+	\xfield{$\frac{cos^3 x}{3} - cos x$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{gradient de f : $grad f(x) = \nabla f(x)$ ?}
+	\xfield{$\left(\frac{\delta f}{\delta x_1}(x),...,\frac{\delta f}{\delta x_n}(x)\right) \in \mathbb{R}^n$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{laplacien de f : $\Delta f(x)$ ?}
+	\xfield{$\sum\limits_{i = 1}^n \frac{\delta^2f}{\delta x_i^2} (x) \in \mathbb{R}$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{divergence de f : $div F(x) = \nabla \cdot F$ ?}
+	\xfield{$\sum\limits_{i = 1}^n \frac{\delta f}{\delta x_i} (x) \in \mathbb{R}$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{rotationnel de f (2D) : $rot F(x) = \nabla \times F$ ?}
+	\xfield{$\frac{\delta F_2}{\delta x_1}(x)-\frac{\delta F_1}{\delta x_2}(x)$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{rotationnel de f (3D) : $rot F(x) = \nabla \times F$ ?}
+	\xfield{$\left(\frac{\delta F_3}{\delta x_2}(x)-\frac{\delta F_2}{\delta x_3}(x),
+	\frac{\delta F_1}{\delta x_3}(x)-\frac{\delta F_3}{\delta x_1}(x),
+	\frac{\delta F_2}{\delta x_1}(x)-\frac{\delta F_1}{\delta x_2}(x)\right)$ \\
+	ou \\
+	$\left( \frac{\delta}{\delta x_1}, \frac{\delta}{\delta x_2}, \frac{\delta}{\delta x_3} \right) \times \left(F_1,F_2,F_3\right)$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{$f \in C^2(\Omega)$  \\
+	div grad $f$ ?}
+	\xfield{$\nabla f$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{$n=3,f \in C^2(\Omega) , F \in C^2(\Omega;\mathbb{R}^3 )$ \\
+	rot grad $f$ ?}
+	\xfield{rot grad $f$ = 0 \\ 
+	div rot $F$ = 0}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{$f \in C^2(\Omega),g \in C^2(\Omega)$  \\
+	div ($f$ grad $g$) ?}
+	\xfield{$f\Delta g$ + grad $f \cdot$ grad $g$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{$f,g \in C^1(\Omega)$ \\
+	grad $(fg)$?}
+	\xfield{$f$ grad $g$ + $g$ grad $f$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{$f \in C^1(\Omega) , F \in C^1(\Omega;\mathbb{R}^n )$  \\
+	div $(fF)$?}
+	\xfield{$f$ div $F$ + $F \cdot$ grad $f$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{$n=3, F \in C^2(\Omega;\mathbb{R}^3 )$ \\
+	rot rot $F$ ?}
+	\xfield{$-\Delta F$ + grad div $F$}
+\end{note}
+
+\begin{note}
+	\tags{diff,an3}1
+	\xfield{$n=3, f \in C^1(\Omega) , F \in C^1(\Omega;\mathbb{R}^3)$ \\
+	rot $(fF)$}
+	\xfield{grad $f \times F + f$ rot $F$}
+\end{note}
+
+\end{document}
