@@ -64,14 +64,6 @@ very often $F_X(x_p) = p$} %% Ajouter le dos de la carte entre {}
 \end{note}
 
 \begin{note}
-	\tags{random variable, definition}
-	\xfield{Quantile} %% Ajouter le devant de la carte entre {}
-	\xfield{For a probability $0<p<1$, the $p$ quantile of $F_X$ is 
-$$x_p = \text{inf}\lbrace x: F_X(x) \ge p \rbrace$$
-very often $F_X(x_p) = p$} %% Ajouter le dos de la carte entre {}
-\end{note}
-
-\begin{note}
 	\tags{random variable, continuous,definition}
 	\xfield{Continuous random variable (PDF and CDF)} %% Ajouter le devant de la carte entre {}
 	\xfield{$$F_X(x) = \int\limits_{-\infty}^x f_X(t) dt$$
@@ -147,8 +139,8 @@ Use when $n$ (fixed) trials.
 \xfield{$$P(X = x) = \binom{n-1}{x-1}p^n(1-p)^{x-n}$$
 $E[X] = \frac{n}{p}$\\
 $var[X] = n \cdot \frac{1-p}{p^2}$\\
-$\mathcal{M}_X(t) = \left(  \frac{pe^t}{1-(1-p)e^t}\right)^n$ if $(1-p)e^t < 1$}\\
-Use to mesure time before last of several sucesses
+$\mathcal{M}_X(t) = \left(  \frac{pe^t}{1-(1-p)e^t}\right)^n$ if $(1-p)e^t < 1$\\
+Use to mesure time before last of several sucesses}
 \end{note}
 
 \begin{note}
@@ -167,7 +159,7 @@ Use to approximate Binomial when $n\simeq \infty$ or $n >> np$}
 \xfield{$$P(X = x) = \frac{1}{b-a}\text{ if $x \in [a,b]$, $0$ else}$$
 $E[X] = \frac{a+b}{2}$\\
 $var[X] = \frac{(b-a)^2}{12}$\\
-$\mathcal{M}_X(t) = \frac{e^{tb}-e^{ta}}{t(b-a)}$ $\forall t \neq 0$
+$\mathcal{M}_X(t) = \frac{e^{tb}-e^{ta}}{t(b-a)}$ $\forall t \neq 0$}
 \end{note}
 
 \begin{note}
@@ -284,12 +276,6 @@ par ?}
 appelle fonction génératrice des cumulants (FGC ou CGF) la fonction définie par ?}
 	\xfield{$\mathcal{K}_X(t) = \log{\mathcal{M}_X(t)} = \log{E[e^{X}]} = \sum \limits_{k=1}^{\infty} \mathit{k}_k1 \frac{t^k}{k!}$, où $k_k$ est le cumulant d'ordre $k$, on a
 	$k_k = d^k \mathcal{K}_X(t)/dt^k |_{t = 0}$, et en particulier $E[X] = k_1$ et $var[X] = k_2$}
-\end{note}
-
-\begin{note}
-	\tags{proba,moments}
-	\xfield{Pour tout entier positif $k$, le moment \textbf{\emph{centré}} d’ordre $k$ est ?}
-	\xfield{$E[(X-E[X])^k]$, en particulier, si $k = 2$, on a $var[X]$}
 \end{note}
 
 
