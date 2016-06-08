@@ -14,6 +14,167 @@
 \newcommand*{\tags}[1]{\paragraph{tags: }#1} 
 % END OF THE PREAMBLE
 \begin{document}
+\begin{note}
+	\tags{combinatorics}
+	\xfield{Permutation with repetition (order matters)} %% Ajouter le devant de la carte entre {}
+	\xfield{If we have $n$ distinct object, the number of permutation (with
+    repetition) of length $r \le n$ is $$r^n$$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{combinatorics}
+	\xfield{Permutation without repetition (order matters)} %% Ajouter le devant de la carte entre {}
+	\xfield{Number of permutation of $k$ objects amongst $n$:
+$$\frac{n!}{(n-k)!}$$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{combinatorics}
+	\xfield{Combination without repetition (order doesn't matter)} %% Ajouter le devant de la carte entre {}
+	\xfield{Number of combination with $k$ objects chosen amongst $n$
+$$\binom{n}{k} = \frac{n!}{(n-k)!k!}$$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{combinatorics}
+	\xfield{Combination with repetition} %% Ajouter le devant de la carte entre {}
+	\xfield{Number of combination of $n$ undistinguishable balls in $k$
+    distinguishable urns:
+$$C^{n}_{n+k-1} = \frac{(n+k-1)!}{n!(k-1)!}$$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{random variable, discrete, definition}
+	\xfield{probability density function (PDF)} %% Ajouter le devant de la carte entre {}
+	\xfield{$f_X(x)=P(X=x)$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{random variable, definition}
+	\xfield{cumulative distribution function (CDF)} %% Ajouter le devant de la carte entre {}
+	\xfield{$F_X(t)=P(X \le t)$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{random variable, definition}
+	\xfield{Quantile} %% Ajouter le devant de la carte entre {}
+	\xfield{For a probability $0<p<1$, the $p$ quantile of $F_X$ is 
+$$x_p = \text{inf}\lbrace x: F_X(x) \ge p \rbrace$$
+very often $F_X(x_p) = p$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{random variable, definition}
+	\xfield{Quantile} %% Ajouter le devant de la carte entre {}
+	\xfield{For a probability $0<p<1$, the $p$ quantile of $F_X$ is 
+$$x_p = \text{inf}\lbrace x: F_X(x) \ge p \rbrace$$
+very often $F_X(x_p) = p$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{random variable, continuous,definition}
+	\xfield{Continuous random variable (PDF and CDF)} %% Ajouter le devant de la carte entre {}
+	\xfield{$$F_X(x) = \int\limits_{-\infty}^x f_X(t) dt$$
+so
+$$f_X(x) = \frac{dF_X(x)}{dx}$$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{random variable, continuous,joint,definition}
+	\xfield{Joint random variables} %% Ajouter le devant de la carte entre {}
+	\xfield{$$F_{X,Y}(x,y) = P(X \le x, Y \le y) = \int\limits_{-\infty}^y
+    \int\limits_{-\infty}^x f_{X,Y}(s,t)ds dt$$
+    and
+$$f_{X,Y}(x,y)=\frac{\delta^2}{\delta x \delta y}F_{X,Y}(x,y)$$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{random variable, continuous,discrete,joint,definition}
+	\xfield{Marginal probability density function and condtional density function} %% Ajouter le devant de la carte entre {}
+	\xfield{$$f_X(x) = \begin{cases} \sum\limits_y f_{X,Y}(x,y),\text{ discrete
+        case}\\
+      \int\limits_{-\infty}^{\infty}f_{X,Y}dy,\text{ continuous case}
+\end{cases}$$
+$$f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y)}{f_X(x)},\ y \in \mathbb{R}$$} %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{random variable, continuous}
+	\xfield{Change of variable (one dimension):\\
+If $X$ is a continuous random variable of density $f_X(x)$ and if
+    $Y=g(X)$ for a function $g$ real and invertible, we have...} %% Ajouter le devant de la carte entre {}
+	\xfield{$$F_Y(t) = \int\limits_{g^{-1}(-\infty,y)}f_X(x)dx$$
+If $g(x)$ is a strictly monotonous and continuously derivable, then the random
+variable $Y=g(X)$ is a continuous random variable with density
+$$f_Y(y) = \begin{cases}
+f_X(g^{-1}(y))|\frac{d g^{-1}(y)}{dy}, &\text{ if $y=g(x)$ for any $x$}\\
+0,&\text{ if $y \neq g(x)$ for all $x$}
+\end{cases}$$
+    } %% Ajouter le dos de la carte entre {}
+\end{note}
+
+\begin{note}
+	\tags{random variable, continuous, joint}
+	\xfield{Change of variable (two dimension):\\
+If $(X_1,X_2)$ are two jointly continuous random variable of density $f_{X_1,X_2}(x_1,x_2)$ and if
+    $(Y_1,Y_2)=(g_1(X_1,X_2),g_2(X_1,X_2))$ for a function $g=(g_1,g_2)$ invertible, we have...} %% Ajouter le devant de la carte entre {}
+	\xfield{$$F_{Y_1,Y_2}(y_1,y_2) = \iint\limits_{\substack{g_1(x_1,x_2)\le y_1
+        \\ g_2(x_1,x_2) \le y_2}} f_{X_1,X_2}(x_1,x_2)dx_1 dx_2$$
+If $g(x)$ is a continuously derivable bijection and its inverse denoted by
+$h=(h_1,h_2)$, then the random couple $(Y_1,Y_2)$ is jointly continuous with
+density:
+$$f_{Y_1,Y_2}(y_1,y_2) = f_{X_1,X_2}(h_1(y_1,y_2),h_2(y_1,y_2)) | J(y_1,y_2) |$$
+where $|J(y_1,y_2)|$ is the Jacobian of $h$ and
+$$J(y_1,y_2) = \frac{\delta h_1}{\delta y_1}\frac{\delta h_2}{\delta y_2} -
+\frac{\delta h_1}{\delta y_2} \frac{\delta h_2}{\delta y_1}$$
+} %% Ajouter le dos de la carte entre
+\end{note}
+
+\begin{note}
+\tags{distribution, discrete}
+\xfield{Binomial distribution}
+\xfield{$$P(X = x) = \binom{n}{x} p^x (1-p)^{n-x}$$
+$E[X] = np$\\
+$var[X] = np(1-p)$\\
+$\mathcal{M}_X(t) = (pe^t+1-p)^n$\\
+Use when $n$ (fixed) trials.
+}
+\end{note}
+
+\begin{note}
+\tags{distribution, discrete}
+\xfield{Negative binomial distribution}
+\xfield{$$P(X = x) = \binom{n-1}{x-1}p^n(1-p)^{x-n}$$
+$E[X] = \frac{n}{p}$\\
+$var[X] = n \cdot \frac{1-p}{p^2}$\\
+$\mathcal{M}_X(t) = \left(  \frac{pe^t}{1-(1-p)e^t}\right)^n$ if $(1-p)e^t < 1$}\\
+Use to mesure time before last of several sucesses
+\end{note}
+
+\begin{note}
+\tags{distribution, discrete}
+\xfield{Poisson distribution}
+\xfield{$$P(X = x) = e^{-\lambda}\frac{\lambda^k}{k!}$$
+$E[X] = \lambda$\\
+$var[X] = \lambda$\\
+$\mathcal{M}_X(t) = e^{\lambda(e^t-1)}$\\
+Use to approximate Binomial when $n\simeq \infty$ or $n >> np$}
+\end{note}
+
+\begin{note}
+\tags{distribution, continuous}
+\xfield{Uniform distribution}
+\xfield{$$P(X = x) = \frac{1}{b-a}\text{ if $x \in [a,b]$, $0$ else}$$
+$E[X] = \frac{a+b}{2}$\\
+$var[X] = \frac{(b-a)^2}{12}$\\
+$\mathcal{M}_X(t) = \frac{e^{tb}-e^{ta}}{t(b-a)}$ $\forall t \neq 0$
+\end{note}
+
+\begin{note}
+\tags{distribution}
+\xfield{Gamma function (not a distribution, but useful), $\Gamma(\alpha)$ = ?}
+\xfield{$\Gamma(\alpha) = \int\limits_0^{\infty} u^{\alpha -1}e^{-u}du$ $\alpha >0$}
+\end{note}
 
 \begin{note}
 	\tags{proba, basics}
