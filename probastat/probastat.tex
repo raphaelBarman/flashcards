@@ -1,0 +1,135 @@
+% -*- coding-system:utf-8 
+% LATEX PREAMBLE --- needs to be imported manually
+\documentclass[12pt]{article}
+\special{papersize=3in,5in}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath}
+\pagestyle{empty}
+\setlength{\parindent}{0in}
+
+%%% commands that do not need to imported into Anki:
+\usepackage{mdframed}
+\newcommand*{\xfield}[1]{\begin{mdframed}\centering #1\end{mdframed}\bigskip}
+\newenvironment{note}{}{}
+\newcommand*{\tags}[1]{\paragraph{tags: }#1} 
+% END OF THE PREAMBLE
+\begin{document}
+
+\begin{note}
+	\tags{proba, basics}
+	\xfield{Probabilité $P(A | B)$ ?}
+	\xfield{$P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B | A)P(A)}{P(B)}$}
+\end{note}
+
+\begin{note}
+	\tags{proba,basics}
+	\xfield{Formule de probabilité totale ?}
+	\xfield{$P(A) = P(A | B_1)P(B_1)+...+P(A | B_n)P(B_n)$}
+\end{note}
+
+\begin{note}
+	\tags{proba,basics}
+	\xfield{Formule de baise ?}
+	\xfield{$P(B_i | A) = \frac{P(A | B_i)P(B_i)}{P(A | B_1)P(B_1) + ... + P(A | B_n)P(B_n)}$}
+\end{note}
+
+\begin{note}
+	\tags{proba,expectation}
+	\xfield{Pour une Variable aléatoire continue $X$ on a $E[X] =$ ?}
+	\xfield{$\int xdF_X(x)$, définie quand $E[|X|] \leq \infty $}
+\end{note}
+
+\begin{note}
+	\tags{proba,expectation}
+	\xfield{$E(g(X))$ pour un $X$ discret?}
+	\xfield{$\sum \limits_{k \in K} g(x_k)P(X = x_k)$}
+\end{note}
+
+\begin{note}
+	\tags{proba,expectation}
+	\xfield{$E(g(X))$ pour un $X$ continu?}
+	\xfield{$\int \limits_{-\infty}^{\infty} g(x)f_X(x)dx$}
+\end{note}
+
+\begin{note}
+	\tags{proba,expectation}
+	\xfield{$E(g(X,Y)$ pour des $X,Y$ continus?}
+	\xfield{$\int \limits_{-\infty}^{\infty} \int \limits_{-\infty}^{\infty} g(x,y)f_{X,Y}(x,y)dxdy$}
+\end{note}
+
+\begin{note}
+	\tags{proba,expectation}
+	\xfield{$var[X]$ ?}
+	\xfield{$E[(X-E[X])^2] = E[X^2]-E[X]^2 = cov[X,X]$}
+\end{note}
+
+\begin{note}
+	\tags{proba,expectation}
+	\xfield{$cov[X,Y]$ ?}
+	\xfield{$E[(X-E[X])(Y-E[Y])] = E[XY] - E[X]E[Y]$}
+\end{note}
+
+\begin{note}
+	\tags{proba,expectation}
+	\xfield{$corr[X,Y]$ ?}
+	\xfield{$\frac{cov[X,Y]}{
+	\sqrt{var[X]}
+	\sqrt{var[Y]}}$}
+\end{note}
+
+
+\begin{note}
+	\tags{proba,expectation}
+	\xfield{$cov[a + bX_1+ cX_2,Y]$ (linéarité de la covariance) ?}
+	\xfield{$b cov[X_1,Y] + c cov[X_2,Y]$}
+\end{note}
+
+\begin{note}
+	\tags{proba,expectation}
+	\xfield{$var[X+Y]$ (variance et covariance)?}
+	\xfield{$var[X] + var[Y]  + 2cov[X,Y]$}
+\end{note}
+
+\begin{note}
+	\tags{proba,expectation}
+	\xfield{$var[aX]$ (homogénéité de la variance)?}
+	\xfield{$a^2 var[X]$}
+\end{note}
+
+\begin{note}
+	\tags{proba,moments}
+	\xfield{Soit $X$ une variable aléatoire et $t \in R$. On appelle
+fonction génératrice des moments (FGM ou MGF) (aussi transformée de Laplace) la fonction définie
+par ?}
+	\xfield{$ \mathcal{M}_X (t) \equiv \mathcal{L}_X(t) = E[e^{tX}] $}
+\end{note}
+
+\begin{note}
+	\tags{proba,moments}
+	\xfield{Pour tout entier positif $k$, le moment d’ordre $k$ est ?}
+	\xfield{$E[X^k]$}
+\end{note}
+
+
+\begin{note}
+	\tags{proba,moments}
+	\xfield{Pour tout entier positif $k$, le moment \textbf{\emph{centré}} d’ordre $k$ est ?}
+	\xfield{$E[(X-E[X])^k]$, en particulier, si $k = 2$, on a $var[X]$}
+\end{note}
+
+\begin{note}
+	\tags{proba,moments}
+	\xfield{Soit X une variable aléatoire et $t \in R$. On
+appelle fonction génératrice des cumulants (FGC ou CGF) la fonction définie par ?}
+	\xfield{$\mathcal{K}_X(t) = \log{\mathcal{M}_X(t)} = \log{E[e^{X}]} = \sum \limits_{k=1}^{\infty} \mathit{k}_k1 \frac{t^k}{k!}$, où $k_k$ est le cumulant d'ordre $k$, on a
+	$k_k = d^k \mathcal{K}_X(t)/dt^k |_{t = 0}$, et en particulier $E[X] = k_1$ et $var[X] = k_2$}
+\end{note}
+
+\begin{note}
+	\tags{proba,moments}
+	\xfield{Pour tout entier positif $k$, le moment \textbf{\emph{centré}} d’ordre $k$ est ?}
+	\xfield{$E[(X-E[X])^k]$, en particulier, si $k = 2$, on a $var[X]$}
+\end{note}
+
+
+\end{document}
