@@ -73,7 +73,7 @@ $$f_X(x) = \frac{dF_X(x)}{dx}$$} %% Ajouter le dos de la carte entre {}
 
 \begin{note}
 	\tags{random variable, continuous,joint,definition}
-	\xfield{Joint random variables} %% Ajouter le devant de la carte entre {}
+	\xfield{Joint random variables, $F_{X,y} = ?$ and $f_{X,Y} = ?$} %% Ajouter le devant de la carte entre {}
 	\xfield{$$F_{X,Y}(x,y) = P(X \le x, Y \le y) = \int\limits_{-\infty}^y
     \int\limits_{-\infty}^x f_{X,Y}(s,t)ds dt$$
     and
@@ -99,7 +99,7 @@ If $X$ is a continuous random variable of density $f_X(x)$ and if
 If $g(x)$ is a strictly monotonous and continuously derivable, then the random
 variable $Y=g(X)$ is a continuous random variable with density
 $$f_Y(y) = \begin{cases}
-f_X(g^{-1}(y))|\frac{d g^{-1}(y)}{dy}, &\text{ if $y=g(x)$ for any $x$}\\
+f_X(g^{-1}(y))|\frac{d g^{-1}(y)}{dy}|, &\text{ if $y=g(x)$ for any $x$}\\
 0,&\text{ if $y \neq g(x)$ for all $x$}
 \end{cases}$$
     } %% Ajouter le dos de la carte entre {}
@@ -278,5 +278,19 @@ appelle fonction génératrice des cumulants (FGC ou CGF) la fonction définie p
 	$k_k = d^k \mathcal{K}_X(t)/dt^k |_{t = 0}$, et en particulier $E[X] = k_1$ et $var[X] = k_2$}
 \end{note}
 
+\begin{note}
+	\tags{proba,moments}
+	\xfield{Variance and expectancy in term of Moment $M_X$}
+	\xfield{$$E(X) = M_X'(0)$$
+$$\text{var}(X) = M_X''(0)-M_X'(0)^2$$}
+\end{note}
+
+\begin{note}
+	\tags{proba,expectancy,variance}
+	\xfield{If $X_1,\ \hdots, X_n$ are independent and all have mean $\mu$ and
+    variance $\sigma^2$ , then $E(\bar{X}) = ?$ and $\text{var}(\bar{X})= ?$}
+	\xfield{$$E(\bar{X}) = \mu$$
+$$\text{var}(\bar{X}) = \frac{\sigma^2}{n}$$}
+\end{note}
 
 \end{document}
